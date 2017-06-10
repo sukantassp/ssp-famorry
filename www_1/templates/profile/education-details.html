@@ -1,0 +1,237 @@
+<ion-view title="Education-Details" id="identity-details-page" hide-nav-bar="true">
+    <ion-content padding="true" style="background: url(img/YLljt9sHQZuoOVeWmWEj_login-screen-bg.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+        <div>
+            <img src="img/o2pDWacJRbK5dTh1vP32_login-screen-logo.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+        </div>
+        <ion-list id="identity-details">
+            <div class="heading">
+                <button id="add-new" class="button button-positive add-new">Add New</button>
+            </div>
+            <div class="service-fund-inn">
+                <div class="transaction-content">
+                    <ul>
+                        <li>
+                            <div class="service-fund-head">EDUCATION DETAILS</div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">QUALIFICATION</div>
+                                <div class="tittle-content">LI</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">INSTITUTE</div>
+                                <div class="tittle-content">rdy</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">BOARD/ UNIVERSITY</div>
+                                <div class="tittle-content">teyy</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">ENTRY YEAR</div>
+                                <div class="tittle-content">1986</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">PASSING YEAR</div>
+                                <div class="tittle-content">2016</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">DIVISION/ GRADE</div>
+                                <div class="tittle-content">fdasfa</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">% OF MARKS</div>
+                                <div class="tittle-content">70</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">GRADE POINT</div>
+                                <div class="tittle-content">—</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Action</div>
+                                <div class="tittle-content">
+                                    <a href="#" class="button-link"><i class="fa fa-eye"></i></a>
+                                    <a href="#" class="button-link"><i class="fa fa-trash"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="service-fund-head">EDUCATION DETAILS</div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">QUALIFICATION</div>
+                                <div class="tittle-content">Class - I</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">INSTITUTE</div>
+                                <div class="tittle-content">Indus Vally World School</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">BOARD/ UNIVERSITY</div>
+                                <div class="tittle-content">C.B.S.E</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">ENTRY YEAR</div>
+                                <div class="tittle-content">2007</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">PASSING YEAR</div>
+                                <div class="tittle-content">2015</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">DIVISION/ GRADE</div>
+                                <div class="tittle-content">A1</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">% OF MARKS</div>
+                                <div class="tittle-content">—</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">GRADE POINT</div>
+                                <div class="tittle-content">—</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Action</div>
+                                <div class="tittle-content">
+                                    <a href="#" class="button-link"><i class="fa fa-eye"></i></a>
+                                    <a href="#" class="button-link"><i class="fa fa-trash"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="add-new-content">
+                <div class="service-fund-head">EDUCATION DETAILS</div>
+                <div class="service-fund-content">
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.sex.$error.required) && (!registration.registrationForm.sex.$pristine) || registration.submitted }">
+                        <label class="item item-select item-stacked-label select-box" id="registetion-select1">
+              <select name="sex" ng-model="userVO.sex" 
+                   ng-options="option.id as option.optionValue for option in registration.userSex" ng-init="userVO.sex=''">         
+                  <option value=''>QUALIFICATION</option>
+              </select>
+                <div class="help-block_cont" data-ng-show="registration.registrationForm.sex.$invalid || registration.submitted">
+                  <small class="help-block inline-error" data-ng-show="registration.registrationForm.sex.$error.required && !registration.registrationForm.sex.$pristine || registration.submitted">
+                   {{registration.famMessages.ERROR.M200013}}
+                  </small>
+              </div>
+            </label>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="INSTITUTE" name="fname" data-ng-model="userVO.fname" required>
+            </label>
+                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                 {{registration.famMessages.ERROR.M200010}}
+                </small>
+                        </div>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="BOARD / UNIVERSITY" name="fname" data-ng-model="userVO.fname" required>
+            </label>
+                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                 {{registration.famMessages.ERROR.M200010}}
+                </small>
+                        </div>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.sex.$error.required) && (!registration.registrationForm.sex.$pristine) || registration.submitted }">
+                        <label class="item item-select item-stacked-label select-box" id="registetion-select1">
+              <select name="sex" ng-model="userVO.sex" 
+                   ng-options="option.id as option.optionValue for option in registration.userSex" ng-init="userVO.sex=''">         
+                  <option value=''>ENTRY MONTH</option>
+              </select>
+                <div class="help-block_cont" data-ng-show="registration.registrationForm.sex.$invalid || registration.submitted">
+                  <small class="help-block inline-error" data-ng-show="registration.registrationForm.sex.$error.required && !registration.registrationForm.sex.$pristine || registration.submitted">
+                   {{registration.famMessages.ERROR.M200013}}
+                  </small>
+              </div>
+            </label>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.sex.$error.required) && (!registration.registrationForm.sex.$pristine) || registration.submitted }">
+                        <label class="item item-select item-stacked-label select-box" id="registetion-select1">
+              <select name="sex" ng-model="userVO.sex" 
+                   ng-options="option.id as option.optionValue for option in registration.userSex" ng-init="userVO.sex=''">         
+                  <option value=''>ENTRY YEAR</option>
+              </select>
+                <div class="help-block_cont" data-ng-show="registration.registrationForm.sex.$invalid || registration.submitted">
+                  <small class="help-block inline-error" data-ng-show="registration.registrationForm.sex.$error.required && !registration.registrationForm.sex.$pristine || registration.submitted">
+                   {{registration.famMessages.ERROR.M200013}}
+                  </small>
+              </div>
+            </label>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.sex.$error.required) && (!registration.registrationForm.sex.$pristine) || registration.submitted }">
+                        <label class="item item-select item-stacked-label select-box" id="registetion-select1">
+              <select name="sex" ng-model="userVO.sex" 
+                   ng-options="option.id as option.optionValue for option in registration.userSex" ng-init="userVO.sex=''">         
+                  <option value=''>PASSING MONTH</option>
+              </select>
+                <div class="help-block_cont" data-ng-show="registration.registrationForm.sex.$invalid || registration.submitted">
+                  <small class="help-block inline-error" data-ng-show="registration.registrationForm.sex.$error.required && !registration.registrationForm.sex.$pristine || registration.submitted">
+                   {{registration.famMessages.ERROR.M200013}}
+                  </small>
+              </div>
+            </label>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.sex.$error.required) && (!registration.registrationForm.sex.$pristine) || registration.submitted }">
+                        <label class="item item-select item-stacked-label select-box" id="registetion-select1">
+              <select name="sex" ng-model="userVO.sex" 
+                   ng-options="option.id as option.optionValue for option in registration.userSex" ng-init="userVO.sex=''">         
+                  <option value=''>PASSING YEAR</option>
+              </select>
+                <div class="help-block_cont" data-ng-show="registration.registrationForm.sex.$invalid || registration.submitted">
+                  <small class="help-block inline-error" data-ng-show="registration.registrationForm.sex.$error.required && !registration.registrationForm.sex.$pristine || registration.submitted">
+                   {{registration.famMessages.ERROR.M200013}}
+                  </small>
+              </div>
+            </label>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="DIVISION / GRADE" name="fname" data-ng-model="userVO.fname" required>
+            </label>
+                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                 {{registration.famMessages.ERROR.M200010}}
+                </small>
+                        </div>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="% OF MARKS" name="fname" data-ng-model="userVO.fname" required>
+            </label>
+                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                 {{registration.famMessages.ERROR.M200010}}
+                </small>
+                        </div>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="GRADE POINT(10 SCALE)" name="fname" data-ng-model="userVO.fname" required>
+            </label>
+                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                 {{registration.famMessages.ERROR.M200010}}
+                </small>
+                        </div>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="file" placeholder="ATTACH CERTIFICATE" name="fname" data-ng-model="userVO.fname" required>
+            </label>
+                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                 {{registration.famMessages.ERROR.M200010}}
+                </small>
+                        </div>
+                    </div>
+                    <div class="button-set">
+                        <button id="save" class="button button-positive previous">Save</button>
+                        <button id="cancel" class="button button-positive next">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </ion-list>
+
+    </ion-content>
+</ion-view>

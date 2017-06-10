@@ -1,0 +1,361 @@
+<ion-view title="Service Review" id="service-review-page" hide-nav-bar="true">
+    <ion-content padding="true" style="background: url(img/YLljt9sHQZuoOVeWmWEj_login-screen-bg.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+        <div>
+            <img src="img/o2pDWacJRbK5dTh1vP32_login-screen-logo.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+        </div>
+        <ion-list id="service-review">
+            <div class="heading">
+                <h2>Review Service Fund Request</h2>
+            </div>
+            <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.sex.$error.required) && (!registration.registrationForm.sex.$pristine) || registration.submitted }">
+                <label class="item item-select item-stacked-label select-box" id="request-status">
+          <select name="sex" ng-model="userVO.sex" 
+               ng-options="option.id as option.optionValue for option in registration.userSex" ng-init="userVO.sex=''">         
+              <option value=''>Submited</option>
+              <option value=''>Approved</option>
+              <option value=''>Denied</option>
+          </select>
+            <div class="help-block_cont" data-ng-show="registration.registrationForm.sex.$invalid || registration.submitted">
+              <small class="help-block inline-error" data-ng-show="registration.registrationForm.sex.$error.required && !registration.registrationForm.sex.$pristine || registration.submitted">
+               {{registration.famMessages.ERROR.M200013}}
+              </small>
+          </div>
+        </label>
+            </div>
+            <div class="service-fund-inn">
+                <div class="submited-content">
+                    <ul>
+                        <li>
+                            <div class="service-fund-head">Request Status Submited</div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Request ID</div>
+                                <div class="tittle-content">CLM-0174</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Claim Date</div>
+                                <div class="tittle-content">03-Apr-2017</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Collection Amount</div>
+                                <div class="tittle-content">5000.00</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Claim Status</div>
+                                <div class="tittle-content">Submitted</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Note Member</div>
+                                <div class="tittle-content">Web Service Testing</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Note Member</div>
+                                <div class="tittle-content">&nbsp;</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Claim</div>
+                                <div class="tittle-content">Claim</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Action</div>
+                                <div class="tittle-content"><a href="#" class="view-btn">View</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="service-fund-head">Request Status Submited</div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Request ID</div>
+                                <div class="tittle-content">CLM-0174</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Claim Date</div>
+                                <div class="tittle-content">03-Apr-2017</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Collection Amount</div>
+                                <div class="tittle-content">5000.00</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Claim Status</div>
+                                <div class="tittle-content">Submitted</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Note Member</div>
+                                <div class="tittle-content">Web Service Testing</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Note Member</div>
+                                <div class="tittle-content">&nbsp;</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Claim</div>
+                                <div class="tittle-content">Claim</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Action</div>
+                                <div class="tittle-content"><a href="#" class="view-btn">View</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="service-fund-head">Request Status Submited</div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Request ID</div>
+                                <div class="tittle-content">CLM-0174</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Claim Date</div>
+                                <div class="tittle-content">03-Apr-2017</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Collection Amount</div>
+                                <div class="tittle-content">5000.00</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Claim Status</div>
+                                <div class="tittle-content">Submitted</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Note Member</div>
+                                <div class="tittle-content">Web Service Testing</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Note Member</div>
+                                <div class="tittle-content">&nbsp;</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Claim</div>
+                                <div class="tittle-content">Claim</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Action</div>
+                                <div class="tittle-content"><a href="#" class="view-btn">View</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="service-fund-head">Request Status Submited</div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Request ID</div>
+                                <div class="tittle-content">CLM-0174</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Claim Date</div>
+                                <div class="tittle-content">03-Apr-2017</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Collection Amount</div>
+                                <div class="tittle-content">5000.00</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Claim Status</div>
+                                <div class="tittle-content">Submitted</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Note Member</div>
+                                <div class="tittle-content">Web Service Testing</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Note Member</div>
+                                <div class="tittle-content">&nbsp;</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Claim</div>
+                                <div class="tittle-content">Claim</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Action</div>
+                                <div class="tittle-content"><a href="#" class="view-btn">View</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="service-fund-head">Request Status Submited</div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Request ID</div>
+                                <div class="tittle-content">CLM-0174</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Claim Date</div>
+                                <div class="tittle-content">03-Apr-2017</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Collection Amount</div>
+                                <div class="tittle-content">5000.00</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Claim Status</div>
+                                <div class="tittle-content">Submitted</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Note Member</div>
+                                <div class="tittle-content">Web Service Testing</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Note Member</div>
+                                <div class="tittle-content">&nbsp;</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Claim</div>
+                                <div class="tittle-content">Claim</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Action</div>
+                                <div class="tittle-content"><a href="#" class="view-btn">View</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="approved-content">
+                    <ul>
+                        <li>
+                            <div class="service-fund-head">Request Status Approved</div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Request ID</div>
+                                <div class="tittle-content">CLM-0174</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Claim Date</div>
+                                <div class="tittle-content">03-Apr-2017</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Collection Amount</div>
+                                <div class="tittle-content">5000.00</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Claim Status</div>
+                                <div class="tittle-content">Approved</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Note Member</div>
+                                <div class="tittle-content">Web Service Testing</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Note Member</div>
+                                <div class="tittle-content">&nbsp;</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Claim</div>
+                                <div class="tittle-content">Claim</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Action</div>
+                                <div class="tittle-content"><a href="#" class="view-btn">View</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="service-fund-head">Request Status Approved</div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Request ID</div>
+                                <div class="tittle-content">CLM-0174</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Claim Date</div>
+                                <div class="tittle-content">03-Apr-2017</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Collection Amount</div>
+                                <div class="tittle-content">5000.00</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Claim Status</div>
+                                <div class="tittle-content">Approved</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Note Member</div>
+                                <div class="tittle-content">Web Service Testing</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Note Member</div>
+                                <div class="tittle-content">&nbsp;</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Claim</div>
+                                <div class="tittle-content">Claim</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Action</div>
+                                <div class="tittle-content"><a href="#" class="view-btn">View</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="service-fund-head">Request Status Approved</div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Request ID</div>
+                                <div class="tittle-content">CLM-0174</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Claim Date</div>
+                                <div class="tittle-content">03-Apr-2017</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Collection Amount</div>
+                                <div class="tittle-content">5000.00</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Claim Status</div>
+                                <div class="tittle-content">Approved</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Note Member</div>
+                                <div class="tittle-content">Web Service Testing</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Note Member</div>
+                                <div class="tittle-content">&nbsp;</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Claim</div>
+                                <div class="tittle-content">Claim</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Action</div>
+                                <div class="tittle-content"><a href="#" class="view-btn">View</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="denied-content">
+                    <ul>
+                        <li>
+                            <div class="service-fund-head">Request Status Denied</div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Request ID</div>
+                                <div class="tittle-content">CLM-0174</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Claim Date</div>
+                                <div class="tittle-content">03-Apr-2017</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Collection Amount</div>
+                                <div class="tittle-content">5000.00</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Claim Status</div>
+                                <div class="tittle-content">Denied</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Note Member</div>
+                                <div class="tittle-content">Web Service Testing</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Note Member</div>
+                                <div class="tittle-content">&nbsp;</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">Claim</div>
+                                <div class="tittle-content">Claim</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Action</div>
+                                <div class="tittle-content"><a href="#" class="view-btn">View</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </ion-list>
+        <div class="button-set">
+            <button id="previous" class="button button-positive previous">Previous</button>
+            <button id="next" class="button button-positive next">Next</button>
+        </div>
+    </ion-content>
+</ion-view>

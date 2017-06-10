@@ -1,0 +1,242 @@
+<ion-view title="identity-details" id="identity-details-page" hide-nav-bar="true">
+    <ion-content padding="true" style="background: url(img/YLljt9sHQZuoOVeWmWEj_login-screen-bg.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+        <div>
+            <img src="img/o2pDWacJRbK5dTh1vP32_login-screen-logo.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+        </div>
+        <ion-list id="identity-details">
+            <div class="heading">
+                <button id="add-new" class="button button-positive add-new">Add New</button>
+            </div>
+            <div class="service-fund-inn">
+                <div class="transaction-content">
+                    <ul>
+                        <li>
+                            <div class="service-fund-head">IDENTITY DETAILS</div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">ID DOCUMENT TYPE</div>
+                                <div class="tittle-content">Voter ID</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">ID NUMBER</div>
+                                <div class="tittle-content">VID123456</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">ISSUE DATE</div>
+                                <div class="tittle-content">30-Nov--0001</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">VALID UPTO</div>
+                                <div class="tittle-content"></div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">ATTACHMENT</div>
+                                <div class="tittle-content">
+                                    <a href="#" class="button-link"><i class="glyphicon glyphicon-picture"></i></a>
+                                </div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Action</div>
+                                <div class="tittle-content">
+                                    <a href="#" class="button-link"><i class="fa fa-pencil"></i></a>
+                                    <a href="#" class="button-link"><i class="fa fa-trash"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="service-fund-head">IDENTITY DETAILS</div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">ID DOCUMENT TYPE</div>
+                                <div class="tittle-content">Aadhaar</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">ID NUMBER</div>
+                                <div class="tittle-content">214132414</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">ISSUE DATE</div>
+                                <div class="tittle-content">07-Mar-2017</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">VALID UPTO</div>
+                                <div class="tittle-content">08-Mar-2017</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">ATTACHMENT</div>
+                                <div class="tittle-content">
+                                    <a href="#" class="button-link"><i class="glyphicon glyphicon-picture"></i></a>
+                                </div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Action</div>
+                                <div class="tittle-content">
+                                    <a href="#" class="button-link"><i class="fa fa-pencil"></i></a>
+                                    <a href="#" class="button-link"><i class="fa fa-trash"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="add-new-content">
+                <div class="service-fund-head">ADD ID PROOF</div>
+                <div class="service-fund-content">
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.sex.$error.required) && (!registration.registrationForm.sex.$pristine) || registration.submitted }">
+                        <label class="item item-select item-stacked-label select-box" id="registetion-select1">
+              <select name="sex" ng-model="userVO.sex" 
+                   ng-options="option.id as option.optionValue for option in registration.userSex" ng-init="userVO.sex=''">         
+                  <option value=''>ID TYPE</option>
+              </select>
+                <div class="help-block_cont" data-ng-show="registration.registrationForm.sex.$invalid || registration.submitted">
+                  <small class="help-block inline-error" data-ng-show="registration.registrationForm.sex.$error.required && !registration.registrationForm.sex.$pristine || registration.submitted">
+                   {{registration.famMessages.ERROR.M200013}}
+                  </small>
+              </div>
+            </label>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="ID NUMBER" name="fname" data-ng-model="userVO.fname" required>
+            </label>
+                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                 {{registration.famMessages.ERROR.M200010}}
+                </small>
+                        </div>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="ID ISSUE DATE" name="fname" data-ng-model="userVO.fname" required>
+            </label>
+                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                 {{registration.famMessages.ERROR.M200010}}
+                </small>
+                        </div>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="ID VALID UPTO" name="fname" data-ng-model="userVO.fname" required>
+            </label>
+                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                 {{registration.famMessages.ERROR.M200010}}
+                </small>
+                        </div>
+                    </div>
+                    <ion-checkbox class="check-box item-stacked-label">IS ID TYPE ADDRESS IS SAME AS YOUR PRESENT ADDRESS</ion-checkbox>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="FLAT / DOOR / BLOCK" name="fname" data-ng-model="userVO.fname" required>
+            </label>
+                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                 {{registration.famMessages.ERROR.M200010}}
+                </small>
+                        </div>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="PREMISUS / BUILDING" name="fname" data-ng-model="userVO.fname" required>
+            </label>
+                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                 {{registration.famMessages.ERROR.M200010}}
+                </small>
+                        </div>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="ROAD / STREET" name="fname" data-ng-model="userVO.fname" required>
+            </label>
+                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                 {{registration.famMessages.ERROR.M200010}}
+                </small>
+                        </div>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="AREA / LOCALITY" name="fname" data-ng-model="userVO.fname" required>
+            </label>
+                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                 {{registration.famMessages.ERROR.M200010}}
+                </small>
+                        </div>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="TOWN / CITY / DISTRICT" name="fname" data-ng-model="userVO.fname" required>
+            </label>
+                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                 {{registration.famMessages.ERROR.M200010}}
+                </small>
+                        </div>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="PIN CODE" name="fname" data-ng-model="userVO.fname" required>
+            </label>
+                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                 {{registration.famMessages.ERROR.M200010}}
+                </small>
+                        </div>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.sex.$error.required) && (!registration.registrationForm.sex.$pristine) || registration.submitted }">
+                        <label class="item item-select item-stacked-label select-box" id="registetion-select1">
+              <select name="sex" ng-model="userVO.sex" 
+                   ng-options="option.id as option.optionValue for option in registration.userSex" ng-init="userVO.sex=''">         
+                  <option value=''>COUNTRY</option>
+              </select>
+                <div class="help-block_cont" data-ng-show="registration.registrationForm.sex.$invalid || registration.submitted">
+                  <small class="help-block inline-error" data-ng-show="registration.registrationForm.sex.$error.required && !registration.registrationForm.sex.$pristine || registration.submitted">
+                   {{registration.famMessages.ERROR.M200013}}
+                  </small>
+              </div>
+            </label>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.sex.$error.required) && (!registration.registrationForm.sex.$pristine) || registration.submitted }">
+                        <label class="item item-select item-stacked-label select-box" id="registetion-select1">
+              <select name="sex" ng-model="userVO.sex" 
+                   ng-options="option.id as option.optionValue for option in registration.userSex" ng-init="userVO.sex=''">         
+                  <option value=''>STATE</option>
+              </select>
+                <div class="help-block_cont" data-ng-show="registration.registrationForm.sex.$invalid || registration.submitted">
+                  <small class="help-block inline-error" data-ng-show="registration.registrationForm.sex.$error.required && !registration.registrationForm.sex.$pristine || registration.submitted">
+                   {{registration.famMessages.ERROR.M200013}}
+                  </small>
+              </div>
+            </label>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="REG. PHONE" name="fname" data-ng-model="userVO.fname" required>
+            </label>
+                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                 {{registration.famMessages.ERROR.M200010}}
+                </small>
+                        </div>
+                    </div>
+                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="file" placeholder="ATTACH ID PROOF" name="fname" data-ng-model="userVO.fname" required>
+            </label>
+                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                 {{registration.famMessages.ERROR.M200010}}
+                </small>
+                        </div>
+                    </div>
+                    <div class="button-set">
+                        <button id="save" class="button button-positive previous">Save</button>
+                        <button id="cancel" class="button button-positive next">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </ion-list>
+
+    </ion-content>
+</ion-view>

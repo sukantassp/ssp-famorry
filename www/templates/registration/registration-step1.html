@@ -1,0 +1,53 @@
+<ion-view title="registration-step3" id="registration-step3-page" hide-nav-bar="true">
+  <ion-content padding="true" style="background: url(img/YLljt9sHQZuoOVeWmWEj_login-screen-bg.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+    <div>
+      <img src="img/o2pDWacJRbK5dTh1vP32_login-screen-logo.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+	<form id="registetion-form1" name="registration_step1.registrationFormstep1" class="list login-form" novalidate>
+    <ion-list id="registration-statup1">
+      <div class="form-group" data-ng-class="{ 'has-error': (registration_step1.registrationFormstep1.location.$error.required) && (!registration_step1.registrationFormstep1.location.$pristine) &&  registration_step1.submitted }">  
+        <label class="item item-select item-stacked-label select-box" id="registetion-service-location" >
+          <select name="location"  ng-model="userVO.location" 
+               ng-options="option.location_cd as option.location_desc for option in registration_step1.serviceLocation" ng-change="registration_step1.getCenter(userVO.location)"  ng-init="userVO.location=''" required><option value=''>Select Service Location</option>
+          </select>
+            <div class="help-block_cont" data-ng-show="registration_step1.registrationFormstep1.location.$invalid && registration_step1.submitted">
+              <small class="help-block inline-error" data-ng-show="registration_step1.registrationFormstep1.location.$error.required && !registration_step1.registrationFormstep1.location.$pristine || registration_step1.submitted">
+               {{registration_step1.famMessages.ERROR.M200021}}
+              </small>
+          </div>
+        </label>
+      </div>
+      <div class="form-group"  data-ng-class="{ 'has-error': (registration_step1.registrationFormstep1.serviceCenter.$error.required) && (!registration_step1.registrationFormstep1.serviceCenter.$pristine) && registration_step1.submitted }">  
+        <label class="item item-select item-stacked-label select-box" id="registetion-service-center">
+          <select name="serviceCenter" ng-model="userVO.serviceCenter" 
+               ng-options="option.service_cntr_cd as option.service_cntr_desc for option in registration_step1.serviceCenter" ng-init="userVO.serviceCenter=''" required>         
+              <option value=''>Select Cervice Center</option>
+          </select>
+            <div class="help-block_cont" data-ng-show="registration_step1.registrationFormstep1.serviceCenter.$invalid &&  registration_step1.submitted">
+              <small class="help-block inline-error" data-ng-show="registration_step1.registrationFormstep1.serviceCenter.$error.required && !registration_step1.registrationFormstep1.serviceCenter.$pristine || registration_step1.submitted">
+               {{registration_step1.famMessages.ERROR.M200022}}
+              </small>
+          </div>
+        </label>
+      </div>
+      <div class="form-group">  
+        <label class="item-stacked-label select-box" id="registetion-service-center">
+          <div class="lebel-head">LOCATION ADDRESS</div>
+            <textarea name="locationAddress"  ng-model="userVO.locationAddress" ng-bind="registration_step1.locationAddress" placeholder="" ng-init="userVO.locationAddress=''"  ></textarea>
+            
+        </label>
+      </div>
+      <div class="form-group">  
+        <label class="item-stacked-label select-box" id="registetion-service-center">
+          <div class="lebel-head">CENTER ADDRESS</div>
+            <textarea name="centerAddress"  ng-model="userVO.centerAddress" ng-bind="registration_step1.locationAddress" placeholder="" ng-init="userVO.centerAddress=''"></textarea>
+        </label>
+      </div>
+    </ion-list>
+	</form>
+    <div class="button-set">
+        <button id="previous" class="button button-positive previous" ui-sref="registration_statup">Previous</button>
+        <button id="next" class="button button-positive next" data-ng-click="registration_step1.onsubmit(userVO)">Next</button>
+      </div>
+  </ion-content>
+</ion-view>

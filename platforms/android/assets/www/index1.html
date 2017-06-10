@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="stylesheet" href="fonts/opensans/css/fonts.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    
+    <link href="css/ionic.app.css" rel="stylesheet">
+    
+
+    <style type="text/css">
+      .platform-ios .manual-ios-statusbar-padding{
+        padding-top:20px;
+      }
+      .manual-remove-top-padding{
+        padding-top:0px; 
+      }
+      .manual-remove-top-padding .scroll{
+        padding-top:0px !important;
+      }
+      ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+        margin-left:-10px;
+        margin-right:-10px;
+      }
+      ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+        border-radius:0px;
+        border-left:0px;
+        border-right: 0px;
+      }
+      .show-list-numbers-and-dots ul{
+        list-style-type: disc;
+        padding-left:40px;
+      }
+      .show-list-numbers-and-dots ol{
+        list-style-type: decimal;
+        padding-left:40px;
+      }
+      .has-error{position: relative;}
+      .has-error .item{border: solid 1px #ff8d8d;}
+      .has-error .help-block_cont{color: #ff8d8d; display: block; margin: -1px 0 15px; font-size: 16px; top: 0; left: 0; right: 0; bottom: 0; }
+      .has-error input[type="text"]{color: #fff;}
+      #login-list2 input{padding-left: 36px;} 
+      #login-list2 .item-icon-left .icon{font-size: 20px; left: 0;}
+      .not-member span{color: #fff; text-decoration: underline;}
+      .item-select.item-stacked-label select{border-bottom: solid 1px #4b6c76; width: 100%; padding-left: 2px; padding-right: 6px; max-width: 100%;background: transparent; color: #aaa;}
+      .item-select.item-stacked-label{padding: 5px 0;border: 0;}
+      .chk-box.item-stacked-label{border:0px; border-bottom: solid 1px #4b6c76; color: #fff;}
+      #registration .has-error .item{border-left: 0; border-top: 0; border-right: 0;}
+      .inline-error{color: #ff8d8d;}
+      .verification-mgs p{text-align: center; color: #fff;}
+      #dosignup input {padding-left: 50px;}
+      #registration-statup .item{}
+      .lebel-head{color: #aaa;}
+      .service-container{margin-top: 40px;}
+      .service-container-list{margin-bottom: 20px;}
+      .service-container-head{overflow: hidden; border-color: rgba(255, 255, 255, 0.3); background-color: #2574ab; color: #fff; text-transform: uppercase;padding: 10px 20px; font-weight: bold;}
+      .service-container-content{overflow: hidden; color: rgba(19, 59, 87, 0.8);background-color: #d8eaf7; padding: 10px 20px;}
+      .heading{position: relative;}
+      .heading:after, .heading:before{content: ""; display: block; clear: both; overflow: hidden; height: 0; line-height: 0; font-size: 0;}
+      .heading h2{color: #fff; font-size: 16px;}
+      #registration-statup1 .form-group{margin-bottom: 20px;}
+      .form-group textarea{border: solid 1px #4b6c76;background: transparent;color: #fff;width: 100%; resize: none;height: 60px;margin-top: 10px; padding: 10px;}
+      .service-container-content.odd{background-color: #cce4f5;}
+      .service-container-list ul li{margin-bottom: 15px;}
+      #registration-statup3 p{color: #fff;}
+      .upload-label{color: #fff;}
+      .icon.cercle:before {display: block;width: 40px;height: 40px;line-height: 40px;text-align: center;border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100%;background: #fff; color: #353e50;}
+      .tab-outer{border-bottom: solid 5px #fff;}
+      .tab-outer button.tab{border-left: solid 1px #79f2ce;}
+      .tab-outer button.ion-cube.tab{border-left: 0;}
+      .header-top{background: #009fe3; padding: 0 5px; width: 100%;float: left;}
+      .header-top:after, .header-top:before{content: ""; display: inline-block; clear: both; overflow: hidden; height: 0; line-height: 0; font-size: 0;}
+      .header-top .logo-outer{float: left;}
+      .header-top .header-icon{float: right;}
+      .link{margin-top: 10px;}
+      .link li{display: inline-block; vertical-align: middle;}
+      .balance-heading{}
+      .balance-heading:after{}
+      .button-link{background: transparent; font-size: 20px;color: #fff; border: 0; margin-left: 5px;}
+      .ion-ios-person.button-link{font-size: 26px;}
+      .ion-ios-rupice.button-link{background: #5ebfe8;padding: 0 10px;font-size: 14px;border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;}
+      .outer-balance{}
+      .outer-balance .inner-balance{background: #009fe3; padding: 15px;}
+      .balance-heading{}
+      .balance-heading-text{font-size: 25px; display: inline-block;width: 60%;line-height: 25px; color: #fff;}
+      .balance-heading-price{display: inline-block; font-size: 50px; color: #fff; font-weight: normal;}
+      .outer-balance ul{}
+      .outer-balance ul li{font-size: 14px;margin-bottom: 5px; text-transform: uppercase; color: #fff;}
+      .outer-balance .list h2{color: #90d9f8; font-weight: bold; font-size: 18px; text-transform: uppercase;}
+      .balance-horz{}
+      .balance-horz li{clear: both; overflow: hidden;}
+      .balance-horz li .balance-horz-head{width: 90%; float: left;}
+      .balance-horz li .balance-horz-con{}
+      .balance-vertical{overflow: hidden;}
+      .balance-vertical li{text-align: center;width: 25%;float: left;overflow: hidden;}
+      .balance-vertical li .balance-horz-head{}
+      .balance-vertical li .balance-horz-con{}
+      #registration-step4 h2{font-size: 16px; color: #fff;}
+
+      .service-fund-inn{margin-top: 20px;}
+      .service-fund-inn ul{}
+      .service-fund-inn ul li{margin-bottom: 15px;}
+      .service-fund-head{border-color: rgba(255, 255, 255, 0.3); background-color: #2574ab;color: #fff; text-transform: uppercase;padding: 10px 20px;font-weight: bold;}
+      .service-fund-content{color: rgba(19, 59, 87, 0.8); background-color: #d8eaf7; padding: 10px 20px;}
+      .service-fund-content.odd{background-color: #cce4f5;}
+      .service-fund-content .tittle-head{text-transform: uppercase; font-weight: 700;}
+      .headding{margin-bottom: 20px; margin-top: 20px;}
+      .headding h2{text-transform: uppercase; color: #fff; font-size: 16px;}
+      .button-link{background-color: #43d9ad; margin-left: 0;height: 30px; line-height: 30px; display: inline-block; padding: 0 12px;}
+      .tittle-content{margin-top: 10px;}
+
+      .list .item.item-accordion {
+        line-height: 38px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        transition: 0.09s all linear;
+      }
+      .list .item.item-accordion.ng-hide {
+        line-height: 0px;
+      }
+      .list .item.item-accordion.ng-hide-add,
+      .list .item.item-accordion.ng-hide-remove {
+        display: block !important;
+      }
+      .fund-outer .item{background: transparent;}
+      .radio-content{color: #aaa; font-size: 14px;}
+      .item-half{width: 50%; float: left; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;}
+      .balance-price{font-size: 20px;display: inline-block;vertical-align: top;}
+      .profile-img{}
+      .profile-img img{max-width: 60px; max-height: 60px;}
+      .header-back{margin: -20px;padding: 10px 20px;background-color: #2574ab; color: #fff;}
+      .header-back .back{background: transparent;border: 0;color: #fff;font-size: 18px;margin-right: 5px; line-height: 16px;}
+      .profile-head{color: #fff;margin-bottom: 25px;}
+      .profile-head .profile-img{display: inline-block; vertical-align: middle; margin-right: 20px;}
+      .profile-head .profile-name{display: inline-block; vertical-align: middle;}
+      .profile-head .profile-name p{margin-bottom: 2px;font-size: 16px;}
+      .profile-head .profile-name a{color: #9fa8bc; text-decoration: none; font-size: 12px;}
+      .profile-form ul{}
+      .profile-form ul li{padding: 10px;border-bottom: solid 1px #193c54;color: #dedede;font-size: 13px;}
+      .profile-form ul li a{color: #dedede; text-decoration: none; font-size: 13px;}
+      .profile-form h4{text-transform: uppercase; color: #43d9ad;font-weight: normal;font-size: 15px;}
+      .profile-first, .profile-second{margin-bottom: 40px;}
+      .add-new{float: right; clear: both;}
+      .glyphicon-picture:before {content: "\e060";}
+      .glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+    .profile-form ul li span{color: #5bc0de;}
+
+
+    </style>
+
+    <script src="js/app.js"></script>
+    <script src="js/route.js"></script>    
+    <script src="lib/angular/ocLazyLoad.min.js"></script>
+    <!--<script src="js/userController.js"></script>--> 
+    <script src="js/directives.js"></script>
+    <script src="js/proxy.js"></script>
+    <script src="js/shared/menuCtrl.js"></script>
+    <script src="js/shared/loaderDirective.js"></script>
+    <script src="js/shared/loaderService.js"></script>
+    <script src="js/shared/alertService.js"></script>
+  	<script src="js/constants.js"></script>
+    <script src="js/userDetails.js"></script>
+    <script src="js/famSessStorage.js"></script>	
+    <script src="js/services.js"></script>
+    <script src="js/messages.js"></script>
+    
+
+    <!-- Only required for Tab projects w/ pages in multiple tabs 
+    <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
+    -->
+
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7">
+  <div>
+  <ion-side-menus enable-menu-with-back-views="false" data-componentid="side-menu21">
+    <ion-side-menu-content>
+      <!--<ion-nav-bar class="bar-light">
+        <ion-nav-back-button></ion-nav-back-button>
+         <ion-nav-buttons side="left">
+          <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        </ion-nav-buttons> 
+      </ion-nav-bar>-->
+      <ion-nav-view></ion-nav-view>
+    </ion-side-menu-content>
+    <!-- <ion-side-menu side="left" id="side-menu21">
+      <ion-header-bar class="bar-positive">
+        <div class="title">Menu</div>
+      </ion-header-bar>
+      <ion-content ng-controller="menuCtrl" padding="false" class="side-menu-left has-header "></ion-content>
+    </ion-side-menu> -->
+  </ion-side-menus>
+  <loader></loader>
+</div>
+  </body>
+</html>

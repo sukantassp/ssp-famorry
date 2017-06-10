@@ -1,0 +1,189 @@
+<ion-view title="registration-step4" id="registration-step4-page" hide-nav-bar="true">
+  <ion-content padding="true" style="background: url(img/YLljt9sHQZuoOVeWmWEj_login-screen-bg.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+    <div>
+      <img src="img/o2pDWacJRbK5dTh1vP32_login-screen-logo.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+	<form id="registetion-form5" name="registration_step4.registrationFormStep4" class="list login-form" novalidate>
+    <ion-list id="registration-step4">
+      <div class="headding">
+        <h2>PRESENT ADDRESS</h2>
+      </div>
+      <div class="form-group"  data-ng-class="{ 'has-error': (registration_step4.registrationFormStep4.flatno.$error.required) && ( !registration_step4.registrationFormStep4.flatno.$pristine)&& registration_step4.submitted }">
+        <label class="item item-input item-floating-label text-fill" id="book-number">
+          <input type="text" placeholder="Flat/Door/Block No" name="flatno" data-ng-model="userVO.flatno" required>
+        </label>
+        <div class="help-block_cont" data-ng-show="(registration_step4.registrationFormStep4.flatno.$invalid && registration_step4.submitted)">
+            <small class="help-block inline-error" data-ng-show="registration_step4.registrationFormStep4.flatno.$error.required || registration_step4.submitted">
+             {{registration_step4.famMessages.ERROR.M200032}}
+			
+            </small>
+        </div>
+      </div>
+      <div class="form-group" data-ng-class="{ 'has-error': (registration_step4.registrationFormStep4.Premises.$error.required) && ( !registration_step4.registrationFormStep4.Premises.$pristine)&& registration_step4.submitted }">
+        <label class="item item-input item-floating-label text-fill" id="building-number">
+          <input type="text" placeholder="Premises/Building/Village" name="Premises" data-ng-model="userVO.Premises" required>
+        </label>
+        <div class="help-block_cont" data-ng-show="registration_step4.registrationFormStep4.Premises.$invalid &&  registration_step4.submitted">
+            <small class="help-block inline-error" data-ng-show="registration_step4.registrationFormStep4.Premises.$error.required && (!registration_step4.registrationFormStep4.Premises.$pristine || registration_step4.submitted)">
+             {{registration_step4.famMessages.ERROR.M200033}}
+            </small>
+        </div>
+      </div>
+      <div class="form-group" data-ng-class="{ 'has-error': (registration_step4.registrationFormStep4.Road.$error.required) && ( !registration_step4.registrationFormStep4.Road.$pristine) && registration_step4.submitted }">
+        <label class="item item-input item-floating-label text-fill" id="post-address">
+          <input type="text" placeholder="Road/Street/P.O" name="Road" data-ng-model="userVO.Road" required>
+        </label>
+        <div class="help-block_cont" data-ng-show="registration_step4.registrationFormStep4.Road.$invalid && registration_step4.submitted">
+            <small class="help-block inline-error" data-ng-show="registration_step4.registrationFormStep4.Road.$error.required && !registration_step4.registrationFormStep4.Road.$pristine || registration_step4.submitted">
+             {{registration_step4.famMessages.ERROR.M200034}}
+            </small>
+        </div>
+      </div>
+      <div class="form-group" data-ng-class="{ 'has-error': (registration_step4.registrationFormStep4.Area.$error.required) && ( !registration_step4.registrationFormStep4.Area.$pristine) && registration_step4.submitted }">
+        <label class="item item-input item-floating-label text-fill" id="area-locality">
+          <input type="text" placeholder="Area/Locality" name="Area" data-ng-model="userVO.Area" required>
+        </label>
+        <div class="help-block_cont" data-ng-show="registration_step4.registrationFormStep4.Area.$invalid &&  registration_step4.submitted">
+            <small class="help-block inline-error" data-ng-show="registration_step4.registrationFormStep4.Area.$error.required && !registration_step4.registrationFormStep4.Area.$pristine || registration_step4.submitted">
+             {{registration_step4.famMessages.ERROR.M200035}}
+            </small>
+        </div>
+      </div>
+      <div class="form-group" data-ng-class="{ 'has-error': (registration_step4.registrationFormStep4.country.$error.required) && (!registration_step4.registrationFormStep4.country.$pristine) && registration_step4.submitted }">  
+        <label class="item item-select item-stacked-label select-box" id="select-country">        
+          <select name="country" ng-model="userVO.country" 
+               ng-options="option.country_code as option.country_desc for option in registration_step4.country"  ng-change="registration_step4.getState(userVO.country)"  ng-init="userVO.country=''" required>         
+              <option value=''>Select Country</option>
+          </select>
+            <div class="help-block_cont" data-ng-show="registration_step4.registrationFormStep4.country.$invalid && registration_step4.submitted">
+              <small class="help-block inline-error" data-ng-show="registration_step4.registrationFormStep4.country.$error.required && !registration_step4.registrationFormStep4.country.$pristine || registration_step4.submitted">
+               {{registration_step4.famMessages.ERROR.M200036}}
+              </small>
+          </div>
+        </label>
+      </div>
+      <div class="form-group" data-ng-class="{ 'has-error': (registration_step4.registrationFormStep4.state.$error.required) && (!registration_step4.registrationFormStep4.state.$pristine) && registration_step4.submitted }">  
+        <label class="item item-select item-stacked-label select-box" id="select-state">
+          <select name="state" ng-model="userVO.state" 
+               ng-options="option.state_code as option.state_desc for option in registration_step4.state" ng-init="userVO.state=''" required>         
+              <option value=''>Select State</option>
+          </select>
+            <div class="help-block_cont" data-ng-show="registration_step4.registrationFormStep4.state.$invalid && registration_step4.submitted">
+              <small class="help-block inline-error" data-ng-show="registration_step4.registrationFormStep4.state.$error.required && !registration_step4.registrationFormStep4.state.$pristine || registration_step4.submitted">
+               {{registration_step4.famMessages.ERROR.M200037}}
+              </small>
+          </div>
+        </label>
+      </div>
+      <div class="form-group" data-ng-class="{ 'has-error': (registration_step4.registrationFormStep4.town.$error.required) && ( !registration_step4.registrationFormStep4.town.$pristine) && registration_step4.submitted }">
+        <label class="item item-input item-floating-label text-fill" id="city-address">
+          <input type="text" placeholder="Town/City/District" name="town" data-ng-model="userVO.town" required>
+        </label>
+        <div class="help-block_cont" data-ng-show="registration_step4.registrationFormStep4.town.$invalid &&  registration_step4.submitted">
+            <small class="help-block inline-error" data-ng-show="registration_step4.registrationFormStep4.town.$error.required && !registration_step4.registrationFormStep4.town.$pristine || registration_step4.submitted">
+             {{registration_step4.famMessages.ERROR.M200038}}
+            </small>
+        </div>
+      </div>
+      <div class="form-group" data-ng-class="{ 'has-error': (registration_step4.registrationFormStep4.pincode.$error.required) && ( !registration_step4.registrationFormStep4.pincode.$pristine) && registration_step4.submitted }">
+        <label class="item item-input item-floating-label text-fill" id="pin-number">
+          <input type="text" placeholder="PIN Code" name="pincode" data-ng-model="userVO.pincode" ng-pattern="/^[0-9]{6}$/" required/>
+        </label>
+        <div class="help-block_cont" data-ng-show="registration_step4.registrationFormStep4.pincode.$invalid &&  registration_step4.submitted">
+            <small class="help-block inline-error" data-ng-show="registration_step4.registrationFormStep4.pincode.$error.required ">
+             {{registration_step4.famMessages.ERROR.M200039}}
+            </small>
+			
+			<small class="help-block inline-error" data-ng-show=						"registration_step4.registrationFormStep4.pincode.$error.pattern">
+               {{registration_step4.famMessages.ERROR.M200047}}
+            </small>
+        </div>
+      </div>
+      <div class="form-group" >
+        <label class="item item-input item-floating-label text-fill" id="land-number">
+          <input type="text" placeholder="Land Line" name="landline" data-ng-model="userVO.landline">
+        </label>
+       
+      </div>
+      <div class="form-group" data-ng-class="{ 'has-error': (registration_step4.registrationFormStep4.mobile.$error.required) && ( !registration_step4.registrationFormStep4.mobile.$pristine) && registration_step4.submitted }">
+        <label class="item item-input item-floating-label text-fill" id="mobile-number">
+          <input type="text" placeholder="Mobile" name="mobile" data-ng-model="userVO.mobile" ng-pattern="/^[0-9]{10}$/" required>
+        </label>
+        <div class="help-block_cont" data-ng-show="registration_step4.registrationFormStep4.mobile.$invalid &&  registration_step4.submitted">
+            <small class="help-block inline-error" data-ng-show="registration_step4.registrationFormStep4.mobile.$error.required ">
+             {{registration_step4.famMessages.ERROR.M200040}}
+            </small>
+			
+			<small class="help-block inline-error" data-ng-show="registration_step4.registrationFormStep4.mobile.$error.pattern">
+               {{registration_step4.famMessages.ERROR.M200018}}
+            </small>
+        </div>
+      </div>
+      <div class="headding">
+        <h2>UPLOAD YOUR ID</h2>
+      </div>
+      <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.sex.$error.required) && (!registration.registrationForm.sex.$pristine) || registration.submitted }">  
+        <label class="item item-select item-stacked-label select-box" id="id-proof-type">
+          <select name="sex" ng-model="userVO.sex" 
+               ng-options="option.id as option.optionValue for option in registration.userSex" ng-init="userVO.sex=''">         
+              <option value=''>Id Proof Type</option>
+          </select>
+            <div class="help-block_cont" data-ng-show="registration.registrationForm.sex.$invalid || registration.submitted">
+              <small class="help-block inline-error" data-ng-show="registration.registrationForm.sex.$error.required && !registration.registrationForm.sex.$pristine || registration.submitted">
+               {{registration.famMessages.ERROR.M200013}}
+              </small>
+          </div>
+        </label>
+      </div>
+      <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+        <div class="upload-label">Upload ID proof</div>
+        <label class="item item-input item-floating-label text-fill" id="upload-id-proof">
+          <input type="file" placeholder="Upload ID proof" name="fname" data-ng-model="userVO.fname" required>
+        </label>
+        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+             {{registration.famMessages.ERROR.M200010}}
+            </small>
+        </div>
+      </div>
+      <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+        <label class="item item-input item-floating-label text-fill" id="id-proof-number">
+          <input type="text" placeholder="ID proof no." name="fname" data-ng-model="userVO.fname" required>
+        </label>
+        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+             {{registration.famMessages.ERROR.M200010}}
+            </small>
+        </div>
+      </div>
+      <div class="headding">
+        <h2>HOW YOU CAME TO KNOW FAMORRY</h2>
+      </div>
+      <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.sex.$error.required) && (!registration.registrationForm.sex.$pristine) || registration.submitted }">  
+        <label class="item item-select item-stacked-label select-box" id="reference-type">
+          <select name="sex" ng-model="userVO.sex" 
+               ng-options="option.id as option.optionValue for option in registration.userSex" ng-init="userVO.sex=''">         
+              <option value=''>Select Reference Type</option>
+          </select>
+            <div class="help-block_cont" data-ng-show="registration.registrationForm.sex.$invalid || registration.submitted">
+              <small class="help-block inline-error" data-ng-show="registration.registrationForm.sex.$error.required && !registration.registrationForm.sex.$pristine || registration.submitted">
+               {{registration.famMessages.ERROR.M200013}}
+              </small>
+          </div>
+        </label>
+      </div>
+      <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+        <label class="item item-input item-floating-label text-fill" id="coupon-code">
+          <input type="text" placeholder="Coupon code(Optional)" name="fname" data-ng-model="userVO.fname" required>
+        </label>
+        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+             {{registration.famMessages.ERROR.M200010}}
+            </small>
+        </div>
+      </div>
+    </ion-list>
+	</form>
+    <button id="statup-next" class="button button-positive button-block" data-ng-click="registration_step4.onsubmit(userVO)">Next</button>
+  </ion-content>
+</ion-view>

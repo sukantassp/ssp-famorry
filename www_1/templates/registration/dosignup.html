@@ -1,0 +1,30 @@
+<ion-view title="dosignup" id="dosignup" hide-nav-bar="true">
+  <ion-content padding="true" style="background: url(img/YLljt9sHQZuoOVeWmWEj_login-screen-bg.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+    <div>
+      <img src="img/o2pDWacJRbK5dTh1vP32_login-screen-logo.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>    
+    <div class="spacer" style="width: 300px; height: 50px;"></div>
+    <div class="verification-mgs">
+      <p>To complete the mobile verification,please enter the verification code that was sent to your mobile +91*******{{dosignup.phoneString}}.</p>
+    </div>
+    <form id="dosignup-form" name="dosignup.dosignupForm"  class="list login-form" novalidate>
+      <ion-list id="dosignup" class="login-inner">
+        <div class="form-group" data-ng-class="{ 'has-error': (dosignup.dosignupForm.vCode.$error.required) && ( !dosignup.dosignupForm.vCode.$pristine) &&  dosignup.submitted }">
+          <label class="item item-input item-icon-left item-floating-label text-fill" id="login-input3">
+            <i class="icon ion-android-person"></i><input type="text" name="vCode" data-ng-model="userVCode.vCode"placeholder="verification code." ng-init="userVCode.vCode=''" required/>
+          </label>   
+          <div class="help-block_cont" data-ng-show="dosignup.dosignupForm.vCode.$invalid && dosignup.submitted">
+              <small class="help-block inline-error" data-ng-show="dosignup.dosignupForm.vCode.$error.required && !dosignup.dosignupForm.vCode.$pristine || dosignup.submitted">
+               {{dosignup.famMessages.ERROR.M200044}}
+			   
+              </small>
+          </div>
+        </div>        
+      </ion-list>
+      <div class="spacer" style="width: 0px; height: 15px;"></div>
+      <button type="submit" style="color:#F5FFFA;" data-ng-click="dosignup.onsubmit(userVCode)" class="button button-positive button-block">Verify</button>
+      <div class="spacer" style="width: 0px; height: 15px;"></div> 
+      <button class="button button-positive button-block button-clear">Resend verification code</button>
+    </form>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,203 @@
+<ion-view title="Education-Details" id="identity-details-page" hide-nav-bar="true">
+
+    <ion-content padding="true" style="background: url(img/YLljt9sHQZuoOVeWmWEj_login-screen-bg.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+        <ion-header-bar class="screenBackground">
+            <button class="button-icon icon  ion-ios7-arrow-back ion-android-arrow-back" ui-sref="home"></button>
+        </ion-header-bar>
+        <div>
+            <img src="img/o2pDWacJRbK5dTh1vP32_login-screen-logo.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+        </div>
+        <ion-list id="identity-details">
+            <div class="heading">
+                <button id="add-new" class="button button-positive add-new" ng-if=" educationDetails.addButton==0" data-ng-click="educationDetails.add()">Add New</button>
+            </div>
+            <div class="service-fund-inn" ng-if="educationDetails.details==1" ng-repeat="education in educationDetails.showQualification track by $index">
+                <div class="transaction-content">
+                    <ul>
+                        <li>
+                            <div class="service-fund-head">EDUCATION DETAILS</div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">QUALIFICATION</div>
+                                <div class="tittle-content" ng-bind="education.degree">LI</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">INSTITUTE</div>
+                                <div class="tittle-content" ng-bind="education.institute">rdy</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">BOARD/ UNIVERSITY</div>
+                                <div class="tittle-content" ng-bind="education.board">teyy</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">ENTRY YEAR</div>
+                                <div class="tittle-content" ng-bind="education.course_start_dt">1986</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">PASSING YEAR</div>
+                                <div class="tittle-content" ng-bind="education.course_end_dt">2016</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">DIVISION/ GRADE</div>
+                                <div class="tittle-content" ng-bind="education.division">fdasfa</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">% OF MARKS</div>
+                                <div class="tittle-content" ng-bind="education.pass_marks">70</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">GRADE POINT</div>
+                                <div class="tittle-content" ng-bind="education.grade_pt">—</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Action</div>
+                                <div class="tittle-content">
+                                    <a href="javascript:void(0)" class="button-link"><i class="fa fa-eye"></i></a>
+                                    <a href="javascript:void(0)" class="button-link" data-ng-click="educationDetails.deleteRow(education)"><i class="fa fa-trash"></i></a>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="add-new-content" ng-if="educationDetails.clickAdd==1">
+                <div class="service-fund-head">EDUCATION DETAILS</div>
+                <form id="professionalDetails_education" name="educationDetails.education" class="list login-form" novalidate>
+                    <div class="service-fund-content">
+                        <div class="form-group" data-ng-class="{ 'has-error': (educationDetails.education.qualification.$error.required) && (!educationDetails.education.qualification.$pristine) && educationDetails.submitted }">
+                            <label class="item item-select item-stacked-label select-box" id="registetion-select1">
+              <select name="qualification" ng-model="userVO.qualification" 
+                   ng-options="option.translate_value for option in educationDetails.qualifications" ng-init="userVO.qualification=''" required/>         
+                  <option value=''>QUALIFICATION</option>
+              </select>
+                <div class="help-block_cont" data-ng-show="educationDetails.education.qualification.$invalid && educationDetails.submitted">
+                  <small class="help-block inline-error" data-ng-show="educationDetails.education.qualification.$error.required && !educationDetails.education.qualification.$pristine || educationDetails.submitted">
+                   {{educationDetails.famMessages.ERROR.M200048}}
+                  </small>
+              </div>
+            </label>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (educationDetails.education.institute.$error.required) && (!educationDetails.education.institute.$pristine) && educationDetails.submitted }">
+                            <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="INSTITUTE" name="institute" data-ng-model="userVO.institute" required/>
+            </label>
+                            <div class="help-block_cont" data-ng-show="educationDetails.education.institute.$invalid &&  educationDetails.submitted">
+                                <small class="help-block inline-error" data-ng-show="educationDetails.education.institute.$error.required && !educationDetails.education.institute.$pristine || educationDetails.submitted">
+                 {{educationDetails.famMessages.ERROR.M200049}}
+                </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (educationDetails.education.university.$error.required) && ( !educationDetails.education.university.$pristine) && educationDetails.submitted }">
+                            <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="BOARD / UNIVERSITY" name="university" data-ng-model="userVO.university" required/>
+            </label>
+                            <div class="help-block_cont" data-ng-show="educationDetails.education.university.$invalid &&  educationDetails.submitted">
+                                <small class="help-block inline-error" data-ng-show="educationDetails.education.university.$error.required && !educationDetails.education.university.$pristine || educationDetails.submitted">
+                 {{educationDetails.famMessages.ERROR.M200050}}
+                </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (educationDetails.education.month.$error.required) && (!educationDetails.education.month.$pristine) && educationDetails.submitted }">
+                            <label class="item item-select item-stacked-label select-box" id="registetion-select1">
+              <select name="month" ng-model="userVO.month" 
+                   ng-options="option.id as option.optionValue for option in educationDetails.entryMonth" ng-init="userVO.month=''" required/>         
+                  <option value=''>ENTRY MONTH</option>
+              </select>
+                <div class="help-block_cont" data-ng-show="educationDetails.education.month.$invalid && educationDetails.submitted">
+                  <small class="help-block inline-error" data-ng-show="educationDetails.education.month.$error.required && !educationDetails.education.month.$pristine || educationDetails.submitted">
+                   {{educationDetails.famMessages.ERROR.M200051}}
+                  </small>
+              </div>
+            </label>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (educationDetails.education.eyear.$error.required) && (!educationDetails.education.eyear.$pristine) && educationDetails.submitted }">
+                            <label class="item item-select item-stacked-label select-box" id="registetion-select1">
+              <select name="eyear" ng-model="userVO.eyear" 
+                   ng-options="option.id as option.optionValue for option in educationDetails.entryYear" 
+                   ng-change="educationDetails.e_year(userVO.eyear)"  ng-init="userVO.eyear=''" required/>         
+                  <option value=''>ENTRY YEAR</option>
+              </select>
+                <div class="help-block_cont" data-ng-show="educationDetails.education.eyear.$invalid && educationDetails.submitted">
+                  <small class="help-block inline-error" data-ng-show="educationDetails.education.eyear.$error.required && !educationDetails.education.eyear.$pristine || educationDetails.submitted">
+                   {{educationDetails.famMessages.ERROR.M200052}}
+                  </small>
+              </div>
+            </label>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (educationDetails.education.pmonth.$error.required) && (!educationDetails.education.pmonth.$pristine) && educationDetails.submitted }">
+                            <label class="item item-select item-stacked-label select-box" id="registetion-select1">
+              <select name="pmonth" ng-model="userVO.pmonth" 
+                   ng-options="option.id as option.optionValue for option in educationDetails.entryMonth" ng-init="userVO.pmonth=''" required/>         
+                  <option value=''>Passing MONTH</option>
+              </select>
+                <div class="help-block_cont" data-ng-show="educationDetails.education.pmonth.$invalid && educationDetails.submitted">
+                  <small class="help-block inline-error" data-ng-show="educationDetails.education.pmonth.$error.required && !educationDetails.education.pmonth.$pristine || educationDetails.submitted">
+                   {{educationDetails.famMessages.ERROR.M200051}}
+                  </small>
+              </div>
+            </label>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (educationDetails.education.pyear.$error.required) && (!educationDetails.education.pyear.$pristine) && educationDetails.submitted }">
+                            <label class="item item-select item-stacked-label select-box" id="registetion-select1">
+              <select name="pyear" ng-model="userVO.pyear" 
+                   ng-options="option.id as option.optionValue for option in  educationDetails.passingYear"  ng-init="userVO.pyear=''" required/>         
+                  <option value=''>PASSING YEAR</option>
+              </select>
+                <div class="help-block_cont" data-ng-show="educationDetails.education.pyear.$invalid && educationDetails.submitted">
+                  <small class="help-block inline-error" data-ng-show="educationDetails.education.pyear.$error.required && !educationDetails.education.pyear.$pristine || educationDetails.submitted">
+                   {{educationDetails.famMessages.ERROR.M200052}}
+                  </small>
+              </div>
+            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="DIVISION / GRADE" name="division" data-ng-model="userVO.division">
+            </label>
+
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': educationDetails.education.marks.$invalid && educationDetails.education.marks.$touched } ">
+                            <label class="item item-input item-floating-label text-fill " id="registetion-input7 ">
+              <input type="number" placeholder="% OF MARKS " name="marks" data-ng-model="userVO.marks" ng-pattern="/^[0-9]{1,3}$/" ng-min="0" ng-max="100">
+            </label>
+
+                            <div class="help-block_cont " data-ng-show="educationDetails.education.marks.$invalid && educationDetails.education.marks.$touched">
+                                <small class="help-block inline-error" data-ng-show="educationDetails.education.marks.number">
+                   {{educationDetails.famMessages.ERROR.M200057}}
+                  </small>
+                                <!--<small class="help-block inline-error " data-ng-show="educationDetails.education.marks.$pattern">
+                   {{educationDetails.famMessages.ERROR.M200052}}
+                  </small>-->
+                            </div>
+
+                        </div>
+                        <div class="form-group " data-ng-class="{ 'has-error': educationDetails.education.gradepoint.$invalid && educationDetails.education.gradepoint.$touched } ">
+                            <label class="item item-input item-floating-label text-fill " id="registetion-input7 ">
+              <input type="text" placeholder="GRADE POINT(10 SCALE) " name="gradepoint " data-ng-model="userVO.gradepoint" ng-pattern="/^[0-9]{1,2}$/" ng-min="0" ng-max="10">
+            </label>
+                            <div class="help-block_cont " data-ng-show="educationDetails.education.gradepoint.$invalid && educationDetails.education.gradepoint.$touched">
+                                <small class="help-block inline-error" data-ng-show="educationDetails.education.gradepoint.number">
+                   {{educationDetails.famMessages.ERROR.M200058}}
+                  </small>
+                                <!--<small class="help-block inline-error " data-ng-show="educationDetails.education.gradepoint.$pattern">
+                   {{educationDetails.famMessages.ERROR.M200052}}
+                  </small>-->
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label class="item item-input item-floating-label text-fill " id="registetion-input7 ">
+              <input type="file " placeholder="ATTACH CERTIFICATE " name="attachcertificate " data-ng-model="userVO.attachcertificate ">
+            </label>
+
+                        </div>
+                        <div class="button-set ">
+                            <button id="save " class="button button-positive previous " data-ng-click="educationDetails.onsubmit(userVO) ">Save</button>
+                            <button id="cancel " class="button button-positive next " data-ng-click="educationDetails.cancel() ">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </ion-list>
+
+    </ion-content>
+</ion-view>

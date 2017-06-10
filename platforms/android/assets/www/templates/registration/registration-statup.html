@@ -1,0 +1,26 @@
+<ion-view title="registration-statup" id="registration-statup-page" hide-nav-bar="true">
+  <ion-content padding="true" style="background: url(img/YLljt9sHQZuoOVeWmWEj_login-screen-bg.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+    <div>
+      <img src="img/o2pDWacJRbK5dTh1vP32_login-screen-logo.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+    <ion-list id="registration-statup" name="registration-statp">
+      <ion-item class="item-icon-left item-icon-right button-item" id="statup-guest" data-ng-click="registration_statup.showId($event)">
+        <i class="icon ion-help-buoy"></i>Guest
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+      <ion-item class="item-icon-left item-icon-right button-item" id="statup-individual" data-ng-click="registration_statup.showId($event)" >
+        <i class="icon ion-ios-pulse-strong"></i>Individual
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+      <ion-item class="item-icon-left item-icon-right button-item" id="statup-famely" data-ng-click="registration_statup.showId($event)">
+        <i class="icon ion-ios-people"></i>Family
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+      <ion-item class="item-icon-left item-icon-right button-item" id="statup-elder" data-ng-click="registration_statup.showId($event)">
+        <i class="icon ion-ios-cart"></i>Elders
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+    <button id="statup-next" class="button button-positive button-block" ng-disabled="registration_statup.check==0" data-ng-click="registration_statup.onsubmit()">Next</button>
+  </ion-content>
+</ion-view>

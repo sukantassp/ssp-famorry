@@ -1,0 +1,103 @@
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+@import "../www/lib/ionic/scss";
+.button-item {
+	background: #e6e8ec;
+	font-size: 15px;
+	color: #353e50;
+	border-bottom: solid 3px #fff;
+	text-transform: uppercase;
+}
+
+.button-item.active {
+	background: #009fe3;
+	color: #fff;
+	border-bottom: solid 3px #fff;
+}
+
+.tab {
+	border: folid 1px #fff;
+}
+
+.wellcome-text {
+	font-size: 20px;
+	color: #fff;
+	font-weight: 300;
+	text-align: center;
+}
+
+.text-fill {
+	border: 0;
+	border-bottom: solid 1px #4b6c76;
+	color: #fff;
+	background: transparent;
+}
+
+.text-fill: focus {
+	border-bottom: solid 1px #009fe3;
+	background: transparent;
+	color: #fff;
+}
+
+.text-fill: : -moz-placeholder {
+	color: white;
+	background: transparent;
+}
+
+.text-fill: -ms-input-placeholder {
+	color: white;
+	background: transparent;
+}
+
+.text-fill: : -webkit-input-placeholder {
+	text-indent: 0;
+	background: transparent;
+	color: white;
+}
+
+.forgot {
+	color: #43d9ad;
+	font-size: 13px;
+	font-weight: 400;
+}
+
+input: -webkit-autofill, textarea: -webkit-autofill, select: -webkit-autofill {
+	color: #fff;
+	background: transparent !important;
+}
+
+input.text-fill: -webkit-autofill,
+input.text-fill: -webkit-autofill: hover,
+input.text-fill: -webkit-autofill: focus,
+input.text-fill: -webkit-autofill: active {
+	color: #fff;
+	background: transparent !important;
+}
+
+ion-view,.pane,.view {
+	background-color: #E6E8EC;
+}
+
+body {
+	color: #353E50;
+}
+
+body.platform-ios {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.ionic-body.platform-ios {
+	font-family: 'Open Sans', sans-serif;
+}
+
+body.platform-android {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.ionic-body.platform-android {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.tab-item,input,button,select,textarea {
+	font-family: inherit;
+}
+

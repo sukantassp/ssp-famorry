@@ -1,0 +1,243 @@
+<ion-view title="identity-details" id="identity-details-page" hide-nav-bar="true">
+    <ion-content padding="true" style="background: url(img/YLljt9sHQZuoOVeWmWEj_login-screen-bg.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+        <div>
+            <img src="img/o2pDWacJRbK5dTh1vP32_login-screen-logo.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+        </div>
+        <ion-list id="identity-details">
+            <div class="heading">
+                <button id="add-new" class="button button-positive add-new" ng-if="identityDetails.addButton==0" data-ng-click="identityDetails.add()">Add New</button>
+            </div>
+            <div class="service-fund-inn" ng-if="identityDetails.showidentitytable==1" ng-repeat="identity in identityDetails.info">
+                <div class="transaction-content">
+                    <ul>
+                        <li>
+                            <div class="service-fund-head">IDENTITY DETAILS</div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">ID DOCUMENT TYPE</div>
+                                <div class="tittle-content">{{identity.iddesc}}</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">ID NUMBER</div>
+                                <div class="tittle-content">{{identity.id_number}}</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">ISSUE DATE</div>
+                                <div class="tittle-content">{{identity.id_issue_dt}}</div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">VALID UPTO</div>
+                                <div class="tittle-content">{{identity.id_valid_upto || 00-00-0000}}</div>
+                            </div>
+                            <div class="service-fund-content">
+                                <div class="tittle-head">ATTACHMENT</div>
+                                <div class="tittle-content">
+                                    <a href="#" class="button-link"><i class="glyphicon glyphicon-picture"></i> {{identity.attachment}}</a>
+                                </div>
+                            </div>
+                            <div class="service-fund-content odd">
+                                <div class="tittle-head">Action</div>
+                                <div class="tittle-content">
+                                    <a href="javascript:void(0)" class="button-link"><i class="fa fa-pencil"></i></a>
+                                    <a href="javascript:void(0)" data-ng-click="identityDetails.deleteIdentity(identity)" class="button-link"><i class="fa fa-trash"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="add-new-content" ng-if="identityDetails.clickAdd==1">
+                <div class="service-fund-head">ADD ID PROOF</div>
+                <form id="personalDetails_identity" name="identityDetails.identity" class="list login-form" novalidate>
+                    <div class="service-fund-content">
+                        <div class="form-group" data-ng-class="{ 'has-error': (identityDetails.identity.identityproof.$error.required) && (!identityDetails.identity.identityproof.$pristine) && identityDetails.submitted }">
+                            <label class="item item-select item-stacked-label select-box" id="registetion-select1">
+              <select name="identityproof" ng-model="userVO.identityproof" 
+                   ng-options="option.optionValue for option in identityDetails.idProof" ng-init="userVO.identityproof=''" required>         
+                  <option value=''>ID TYPE</option>
+              </select>
+                <div class="help-block_cont" data-ng-show="identityDetails.identity.identityproof.$invalid && identityDetails.submitted">
+                  <small class="help-block inline-error" data-ng-show="identityDetails.identity.identityproof.$error.required && !identityDetails.identity.identityproof.$pristine || identityDetails.submitted">
+                   {{identityDetails.famMessages.ERROR.M200059}}
+                  </small>
+              </div>
+            </label>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (identityDetails.identity.id_number.$error.required) && (!identityDetails.identity.id_number.$pristine) && identityDetails.submitted }">
+                            <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="ID NUMBER" name="id_number" data-ng-model="userVO.id_number" required/>
+            </label>
+                            <div class="help-block_cont" data-ng-show="identityDetails.identity.id_number.$invalid &&  identityDetails.submitted">
+                                <small class="help-block inline-error" data-ng-show="identityDetails.identity.id_number.$error.required && !identityDetails.identity.id_number.$pristine || identityDetails.submitted">
+                 {{identityDetails.famMessages.ERROR.M200060}}
+                </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (identityDetails.identity.issuedate.$error.required) && ( !identityDetails.identity.issuedate.$pristine) && identityDetails.submitted }">
+                            <datepicker date-format="dd-MMMM-yyyy" selector="form-control">
+                                <div class="input-group">
+                                    <input name="issuedate" style="border: 0;  border-bottom: solid 1px #4b6c76; color: #fff; background: transparent; margin-bottom: 5px;" data-ng-model="userVO.issuedate" class="form-control" placeholder="Choose issue date" required/>
+                                    <span class="input-group-addon" style="cursor: pointer">
+						<i class="fa fa-lg fa-calendar"></i>
+						</span>
+                                </div>
+                            </datepicker>
+                            <div class="help-block_cont" data-ng-show="identityDetails.identity.issuedate.$invalid &&  identityDetails.submitted">
+                                <small class="help-block inline-error" data-ng-show="identityDetails.identity.issuedate.$error.required && !identityDetails.identity.issuedate.$pristine || identityDetails.submitted">
+                 {{identityDetails.famMessages.ERROR.M200061}}
+                </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (identityDetails.endDateCheck==1 && identityDetails.submitted )}">
+                            <datepicker date-format="dd-MMMM-yyyy" selector="form-control">
+                                <div class="input-group">
+                                    <input name="validuptodate" style="border: 0;  border-bottom: solid 1px #4b6c76; color: #fff; background: transparent; margin-bottom: 5px;" data-ng-model="userVO.validuptodate" class="form-control" placeholder="valid upto">
+                                    <span class="input-group-addon" style="cursor: pointer">
+						<i class="fa fa-lg fa-calendar"></i>
+						</span>
+                                </div>
+                            </datepicker>
+                            <div class="help-block_cont" data-ng-show="identityDetails.endDateCheck==1  &&  identityDetails.submitted ">
+                                <small class="help-block inline-error" data-ng-show="identityDetails.endDateCheck==1 || identityDetails.submitted">
+               {{identityDetails.famMessages.ERROR.M200071}}
+                </small>
+                            </div>
+                        </div>
+                        <ion-checkbox class="check-box item-stacked-label" ng-model="checkbox" name="checkbox" ng-true-value="'true'" ng-false-value="'false'" data-ng-click="identityDetails.autoAddress(checkbox)">IS ID TYPE ADDRESS IS SAME AS YOUR PRESENT ADDRESS</ion-checkbox>
+                        <div class="form-group" data-ng-class="{ 'has-error': (identityDetails.identity.flat.$error.required) && ( !identityDetails.identity.flat.$pristine) && identityDetails.submitted }">
+                            <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="FLAT / DOOR / BLOCK"  name="flat" ng-if="identityDetails.txtDisbled!=1" data-ng-model="userVO.flat"  required/>
+              <input type="text" placeholder="FLAT / DOOR / BLOCK"  name="flat" ng-if="identityDetails.txtDisbled==1" ng-disabled="identityDetails.txtDisbled==1"  ng-value="identityDetails.p_Addressinfo.flatDoorBlockNo" >
+
+            </label>
+                            <div class="help-block_cont" data-ng-show="identityDetails.identity.flat.$invalid &&  identityDetails.submitted">
+                                <small class="help-block inline-error" data-ng-show="identityDetails.identity.flat.$error.required && !identityDetails.identity.flat.$pristine || identityDetails.submitted">
+                 {{identityDetails.famMessages.ERROR.M200062}}
+                </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (identityDetails.identity.premises.$error.required) && ( !identityDetails.identity.premises.$pristine) && identityDetails.submitted }">
+                            <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="PREMISUS / BUILDING" name="premises" ng-if="identityDetails.txtDisbled!=1"  data-ng-model="userVO.premises" required/>
+              <input type="text" placeholder="PREMISUS / BUILDING" name="premises" ng-if="identityDetails.txtDisbled==1" ng-disabled="identityDetails.txtDisbled==1" ng-value="identityDetails.p_Addressinfo.prmsVillBuilding" >
+            </label>
+                            <div class="help-block_cont" data-ng-show="identityDetails.identity.premises.$invalid &&  identityDetails.submitted">
+                                <small class="help-block inline-error" data-ng-show="identityDetails.identity.premises.$error.required && !identityDetails.identity.premises.$pristine || identityDetails.submitted">
+                 {{identityDetails.famMessages.ERROR.M200063}}
+                </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (identityDetails.identity.road.$error.required) && (!identityDetails.identity.road.$pristine) && identityDetails.submitted }">
+                            <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="ROAD / STREET" ng-if="identityDetails.txtDisbled!=1"  name="road" data-ng-model="userVO.road" required/>
+              <input type="text" placeholder="ROAD / STREET" ng-if="identityDetails.txtDisbled==1" ng-disabled="identityDetails.txtDisbled==1" ng-value="identityDetails.p_Addressinfo.roadStreetPO" name="road"  />
+            </label>
+                            <div class="help-block_cont" data-ng-show="identityDetails.identity.road.$invalid &&  identityDetails.submitted">
+                                <small class="help-block inline-error" data-ng-show="identityDetails.identity.road.$error.required && !identityDetails.identity.road.$pristine || identityDetails.submitted">
+                  {{identityDetails.famMessages.ERROR.M200064}}
+                </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (identityDetails.identity.area.$error.required) && ( !identityDetails.identity.area.$pristine) && identityDetails.submitted }">
+                            <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="AREA / LOCALITY" name="area" ng-if="identityDetails.txtDisbled!=1"  data-ng-model="userVO.area" required/>
+              <input type="text" placeholder="AREA / LOCALITY" name="area" ng-if="identityDetails.txtDisbled==1"  ng-disabled="identityDetails.txtDisbled==1" ng-value="identityDetails.p_Addressinfo.areaLocality" />
+            </label>
+                            <div class="help-block_cont" data-ng-show="identityDetails.identity.area.$invalid &&  identityDetails.submitted">
+                                <small class="help-block inline-error" data-ng-show="identityDetails.identity.area.$error.required && !identityDetails.identity.area.$pristine || identityDetails.submitted">
+                 {{identityDetails.famMessages.ERROR.M200065}}
+                </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (identityDetails.identity.town.$error.required) && ( !identityDetails.identity.town.$pristine) && identityDetails.submitted }">
+                            <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="TOWN / CITY / DISTRICT" ng-if="identityDetails.txtDisbled!=1"  name="town" data-ng-model="userVO.town" required/>
+              <input type="text" placeholder="TOWN / CITY / DISTRICT" ng-if="identityDetails.txtDisbled==1" ng-disabled="identityDetails.txtDisbled==1" ng-value="identityDetails.p_Addressinfo.townCityDist" name="town"  />
+            </label>
+                            <div class="help-block_cont" data-ng-show="identityDetails.identity.town.$invalid && identityDetails.submitted">
+                                <small class="help-block inline-error" data-ng-show="identityDetails.identity.town.$error.required && !identityDetails.identity.town.$pristine || identityDetails.submitted">
+                 {{identityDetails.famMessages.ERROR.M200066}}
+                </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (identityDetails.identity.pincode.$error.required) && ( !identityDetails.identity.pincode.$pristine) &&  identityDetails.submitted }">
+                            <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="PIN CODE" ng-if="identityDetails.txtDisbled!=1"  name="pincode" data-ng-model="userVO.pincode" ng-pattern="/^[0-9]{6}$/" required/>
+              <input type="text" placeholder="PIN CODE" ng-if="identityDetails.txtDisbled==1" ng-disabled="identityDetails.txtDisbled==1" ng-value="identityDetails.p_Addressinfo.pinCd" name="pincode"  >
+            </label>
+                            <div class="help-block_cont" data-ng-show="identityDetails.identity.pincode.$invalid && identityDetails.submitted">
+                                <small class="help-block inline-error" data-ng-show="identityDetails.identity.pincode.$error.required">
+                 {{identityDetails.famMessages.ERROR.M200067}}
+                </small>
+                                <small class="help-block inline-error" data-ng-show="identityDetails.identity.pincode.$error.pattern">
+                 {{identityDetails.famMessages.ERROR.M200047}}
+                </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (identityDetails.identity.country.$error.required) && (!identityDetails.identity.country.$pristine) && identityDetails.submitted }">
+                            <label class="item item-select item-stacked-label select-box" id="registetion-select1">
+              <select name="country" ng-model="userVO.country" ng-if="identityDetails.txtDisbled==0" 
+                   ng-options="option.country_code as option.country_desc for option in identityDetails.country" >         
+                 <option value=''>{{identityDetails.countryName}}</option>
+              </select>
+
+               <select type="text" ng-if="identityDetails.txtDisbled==1" ng-disabled="identityDetails.txtDisbled==1"   name="country">
+                     <option value=''>{{identityDetails.p_Addressinfo.countryCd}}</option>
+              </select>
+                <div class="help-block_cont" data-ng-show="identityDetails.identity.country.$invalid && identityDetails.submitted">
+                  <small class="help-block inline-error" data-ng-show="identityDetails.identity.country.$error.required && !identityDetails.identity.country.$pristine || identityDetails.submitted">
+                   {{identityDetails.famMessages.ERROR.M200068}}
+                  </small>
+              </div>
+            </label>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (identityDetails.identity.state.$error.required) && (!identityDetails.identity.state.$pristine) && identityDetails.submitted }">
+                            <label class="item item-select item-stacked-label select-box" id="registetion-select1">
+              <select name="state" ng-model="userVO.state" ng-if="identityDetails.txtDisbled!=1" 
+                  ng-options="option.state_code as option.state_desc for option in  identityDetails.state" required>         
+                 <option value=''>State</option>
+              </select>
+              <select type="text" ng-if="identityDetails.txtDisbled==1" ng-disabled="identityDetails.txtDisbled==1"   name="state" >
+               <option value="">{{identityDetails.p_Addressinfo.stateCd}}</option>
+              </select>
+                <div class="help-block_cont" data-ng-show="identityDetails.identity.state.$invalid && identityDetails.submitted">
+                  <small class="help-block inline-error" data-ng-show="identityDetails.identity.state.$error.required && !identityDetails.identity.state.$pristine || identityDetails.submitted">
+                     {{identityDetails.famMessages.ERROR.M200069}}
+                  </small>
+              </div>
+            </label>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (identityDetails.identity.reg_ph.$error.required) && ( !identityDetails.identity.reg_ph.$pristine) && identityDetails.submitted }">
+                            <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="REG. PHONE" ng-if="identityDetails.txtDisbled!=1"  name="reg_ph" data-ng-model="userVO.reg_ph"  ng-pattern="/^[0-9]{10}$/" required/>
+              <input type="text" placeholder="REG. PHONE" ng-if="identityDetails.txtDisbled==1"  ng-disabled="identityDetails.txtDisbled==1" ng-value="identityDetails.contact_info.mobileNo" name="reg_ph" />
+            </label>
+                            <div class="help-block_cont" data-ng-show="identityDetails.identity.reg_ph.$invalid && identityDetails.submitted">
+                                <small class="help-block inline-error" data-ng-show="identityDetails.identity.reg_ph.$error.required">
+                 {{identityDetails.famMessages.ERROR.M200070}}
+                </small>
+                                <small class="help-block inline-error" data-ng-show="identityDetails.identity.reg_ph.$error.pattern">
+                {{identityDetails.famMessages.ERROR.M200018}}
+                </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                            <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="file" placeholder="ATTACH ID PROOF" name="fname" data-ng-model="userVO.fname" required>
+            </label>
+                            <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                                <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                 {{registration.famMessages.ERROR.M200010}}
+                </small>
+                            </div>
+                        </div>
+                        <div class="button-set">
+                            <button id="save" class="button button-positive previous" data-ng-click="identityDetails.saveIdentityDetails(userVO)">Save</button>
+                            <button id="cancel" class="button button-positive next" data-ng-click="identityDetails.cancel()">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </ion-list>
+
+    </ion-content>
+</ion-view>

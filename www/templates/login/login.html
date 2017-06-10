@@ -1,0 +1,43 @@
+<ion-view title="Login" id="page6" hide-nav-bar="true">
+  <ion-content padding="true" style="background: url(img/YLljt9sHQZuoOVeWmWEj_login-screen-bg.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+    <div>
+      <img src="img/o2pDWacJRbK5dTh1vP32_login-screen-logo.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+    <p class="wellcome-text">
+      Welcome! Please Signin.
+    </p>
+    <div class="spacer" style="width: 300px; height: 50px;"></div>
+    <form id="login-form2" name="login.loginForm"  class="list login-form" novalidate>
+      <ion-list id="login-list2" class="login-inner">
+        <div class="form-group" data-ng-class="{ 'has-error': (login.loginForm.userID.$error.required) && login.submitted }">
+          <label class="item item-input item-icon-left item-floating-label text-fill" id="login-input3">
+            <i class="icon ion-android-person"></i><input type="text" placeholder="Phone Number/Email ID" data-ng-model="userVO.user" name="userID" required>
+          </label>
+          <div class="help-block_cont" data-ng-show="login.loginForm.userID.$invalid && login.submitted">
+              <small class="help-block" data-ng-show="login.loginForm.userID.$error.required && login.submitted">
+               {{login.famMessages.ERROR.M200002}}
+              </small>
+          </div>
+        </div>
+        <div class="form-group" data-ng-class="{ 'has-error': (login.loginForm.password.$error.required) && login.submitted }">
+          <label class="item item-input item-icon-left item-floating-label text-fill" id="login-input4">
+            <i class="icon ion-unlocked"></i><input type="password" placeholder="Enter Password" data-ng-model="userVO.pass" name="password" required>
+          </label>
+          <div class="help-block_cont" data-ng-show="login.loginForm.password.$invalid && login.submitted">
+              <small class="help-block" data-ng-show="login.loginForm.password.$error.required && login.submitted">
+               {{login.famMessages.ERROR.M200004}}
+              </small>
+          </div>
+        </div>
+      </ion-list>
+      <div class="spacer" style="width: 0px; height: 0px;"></div>
+      <div class="spacer" style="width: 300px; height: 15px;"></div>
+      <p class="forgot">
+        Forgot Username / Password?
+      </p>
+      <button type="submit" id="login-button20"   data-ng-disabled="login.userLocked" data-ng-click="login.onsubmit(userVO)" style="color:#F5FFFA;" class="button button-positive  button-block">member sign in</button>
+      <!--<input type="submit" id="login-button20" style="color:#F5FFFA;" class="button button-positive  button-block" name="member sign in">-->
+      <button id="login-button21" ui-sref="{{login.famConstants.STATE_USER.USER_REGISTRATION}}" class="button button-positive  button-block button-clear">Not a member? Sign up now!</button>
+    </form>
+  </ion-content>
+</ion-view>

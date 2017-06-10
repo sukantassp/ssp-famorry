@@ -1,0 +1,65 @@
+<ion-view title="registration-step2" id="registration-step2-page" hide-nav-bar="true">
+  <ion-content padding="true" style="background: url(img/YLljt9sHQZuoOVeWmWEj_login-screen-bg.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+    <div>
+      <img src="img/o2pDWacJRbK5dTh1vP32_login-screen-logo.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+	<form id="registetion-form2" name="registration_step2.registrationFormStep2" class="list login-form" novalidate>
+    <ion-list id="registration-statup2">
+      <label class="item item-radio text-fill" id="radio-guest">
+        <input type="radio" name="radio-statup2"  value="guest" data-ng-click="registration_step2.showId($event)">
+        <div class="radio-content">
+          <div class="item-content disable-pointer-events" >
+            <span>Guest</span>
+          </div>
+          <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+        </div>
+      </label>
+      <label class="item item-radio text-fill" id="radio-silver">
+        <input type="radio" name="radio-statup2"  value="silver" data-ng-click="registration_step2.showId($event)">
+        <div class="radio-content">
+          <div class="item-content disable-pointer-events" >
+            <span>Silver</span>
+          </div>
+          <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+        </div>
+      </label>
+      <label class="item item-radio text-fill" id="radio-gold">
+        <input type="radio" name="radio-statup2" disabled>
+        <div class="radio-content">
+          <div class="item-content disable-pointer-events" >
+            <span>Gold</span>
+          </div>
+          <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+        </div>
+      </label>
+      <label class="item item-radio text-fill" id="radio-platinum">
+        <input type="radio" name="radio-statup2" disabled>
+        <div class="radio-content">
+          <div class="item-content disable-pointer-events">
+            <span>Platinum</span>
+          </div>
+          <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+        </div>
+      </label>
+      
+      <div class="service-container">        
+        <div class="service-container-list">
+          <ul >
+            <li ng-repeat="services in registration_step2.serviceDetails">
+              <div class="service-container-head">SERVICES DETAILS</div>
+              <div class="service-container-content"><span>Service Name: </span>{{services.sername}}</div>
+              <div class="service-container-content odd"><span>Service Type: </span>{{services.service_type}}</div>
+              <div class="service-container-content"><span>Free Service: </span>{{services.service_cnt}}</div>
+            </li>
+           
+          </ul>          
+        </div>
+      </div>
+    </ion-list>
+	</form>
+    <div class="button-set">
+      <button id="previous" class="button button-positive previous" ui-sref="registration_step2">Previous</button>
+      <button id="next" class="button button-positive next"  ng-disabled="registration_step2.checked==0" data-ng-click="registration_step2.onsubmit()">Next</button>
+    </div>
+  </ion-content>
+</ion-view>

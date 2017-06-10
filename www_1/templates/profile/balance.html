@@ -1,0 +1,340 @@
+<ion-view title="balance" id="balance">
+    <ion-content padding="false" style="background: url(img/YLljt9sHQZuoOVeWmWEj_login-screen-bg.jpg) no-repeat center;background-size:cover;" class=" manual-remove-top-padding has-header">
+        <div class="header-top">
+            <div class="logo-outer"><img src="img/logo.jpg"></div>
+            <div class="header-icon">
+                <ul class="link">
+                    <li>
+                        <button class="ion-ios-rupice button-link">&#8377; <span>0</span></button>
+                    </li>
+                    <li>
+                        <button class="ion-ios-person button-link"></button>
+                    </li>
+                    <li>
+                        <button class="ion-earth button-link"></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="button-bar tab-outer">
+            <button class="button button-balanced icon ion-cube tab"></button>
+            <button class="button button-balanced icon ion-android-person tab"></button>
+            <button class="button button-balanced icon ion-android-settings tab"></button>
+            <button class="button button-balanced icon ion-android-exit tab"></button>
+        </div>
+        <ion-list class="outer-balance">
+            <div class="inner-balance">
+                <div class="balance-heading">
+                    <span class="balance-heading-text">Available <br />Balance:</span>
+                    <span class="balance-heading-price">&#8377; <span class="balance-price">1000</span></span>
+                </div>
+                <h2>rs. NA</h2>
+                <ul class="balance-horz">
+                    <li>
+                        <div class="balance-horz-head">Locked Fund:</div>
+                        <div class="balance-horz-con">na</div>
+                    </li>
+                    <li>
+                        <div class="balance-horz-head">Last Amount Received:</div>
+                        <div class="balance-horz-con">na</div>
+                    </li>
+                    <li>
+                        <div class="balance-horz-head">Last Fund Addition Date:</div>
+                        <div class="balance-horz-con">na</div>
+                    </li>
+                    <li>
+                        <div class="balance-horz-head">Last Payment:</div>
+                        <div class="balance-horz-con">na</div>
+                    </li>
+                    <li>
+                        <div class="balance-horz-head">Last Payment Date:</div>
+                        <div class="balance-horz-con">na</div>
+                    </li>
+                </ul>
+                <h2>Locked Fund Details</h2>
+                <ul class="balance-vertical">
+                    <li>
+                        <div class="balance-horz-head">SR#</div>
+                        <div class="balance-horz-con">na</div>
+                    </li>
+                    <li>
+                        <div class="balance-horz-head">SERVICE</div>
+                        <div class="balance-horz-con">na</div>
+                    </li>
+                    <li>
+                        <div class="balance-horz-head">DATE</div>
+                        <div class="balance-horz-con">na</div>
+                    </li>
+                    <li>
+                        <div class="balance-horz-head">AMOUNT</div>
+                        <div class="balance-horz-con">na</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="fund-outer">
+                <div class="fund-group">
+                    <ion-item class="item-stable" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> &nbsp; Add Service Fund
+                    </ion-item>
+                    <ion-item class="item-accordion">
+                        <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                            <label class="item item-input item-floating-label text-fill">
+                <input type="text" placeholder="Enter Amount you wish to" name="fname" data-ng-model="userVO.fname" required>
+              </label>
+                            <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                                <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                   {{registration.famMessages.ERROR.M200010}}
+                  </small>
+                            </div>
+                        </div>
+                        <button id="add" style="margin-top: 10px; margin-bottom: 20px;" class="button button-positive add">Add</button>
+                        <div class="card-select-outer">
+                            <div class="lebel-head">Choose Card</div>
+                            <label class="item item-radio text-fill" id="net-banking">
+                <input type="radio" name="card-select" value="on">
+                <div class="radio-content">
+                  <div class="item-content disable-pointer-events" >
+                    <span>Net Banking</span>
+                  </div>
+                  <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+                </div>
+              </label>
+                            <label class="item item-radio text-fill" id="debit-card">
+                <input type="radio" name="card-select">
+                <div class="radio-content">
+                  <div class="item-content disable-pointer-events" >
+                    <span>Debit Card</span>
+                  </div>
+                  <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+                </div>
+              </label>
+                            <label class="item item-radio text-fill" id="credit-card">
+                <input type="radio" name="card-select">
+                <div class="radio-content">
+                  <div class="item-content disable-pointer-events" >
+                    <span>Credit Card</span>
+                  </div>
+                  <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+                </div>
+              </label>
+                        </div>
+                        <div class="service-container">
+                            <div class="service-container-list">
+                                <div class="service-container-head">
+                                    <div class="item-half">Description</div>
+                                    <div class="item-half">Amount</div>
+                                </div>
+                                <div class="service-container-content">
+                                    <div class="item-half">Amount Payable to FAB Family</div>
+                                    <div class="item-half">1500</div>
+                                </div>
+                                <div class="service-container-content odd">
+                                    <div class="item-half">Convenience Charge</div>
+                                    <div class="item-half">&#x20b9; 25</div>
+                                </div>
+                                <div class="service-container-content">
+                                    <div class="item-half"><strong>Total Payable</strong></div>
+                                    <div class="item-half">&#x20b9; 1525</div>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="pay-online" style="margin-top: 10px; margin-bottom: 20px;" class="button button-positive pay-online">Pay Online</button>
+                    </ion-item>
+                </div>
+                <div class="fund-group">
+                    <ion-item class="item-stable" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> &nbsp; "I Have Paid" Request
+                    </ion-item>
+                    <ion-item class="item-accordion">
+                        <div class="card-select-outer">
+                            <div class="lebel-head">I made a Payment to Service Fund by</div>
+                            <label class="item item-radio text-fill" id="cheque">
+                <input type="radio" name="payment" value="on">
+                <div class="radio-content">
+                  <div class="item-content disable-pointer-events" >
+                    <span>Cheque</span>
+                  </div>
+                  <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+                </div>
+              </label>
+                            <label class="item item-radio text-fill" id="cash">
+                <input type="radio" name="payment">
+                <div class="radio-content">
+                  <div class="item-content disable-pointer-events" >
+                    <span>Cash</span>
+                  </div>
+                  <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+                </div>
+              </label>
+                            <label class="item item-radio text-fill" id="neft-rtgs">
+                <input type="radio" name="payment">
+                <div class="radio-content">
+                  <div class="item-content disable-pointer-events" >
+                    <span>NEFT/RTGS</span>
+                  </div>
+                  <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+                </div>
+              </label>
+                            <label class="item item-radio text-fill" id="upi">
+                <input type="radio" name="payment">
+                <div class="radio-content">
+                  <div class="item-content disable-pointer-events" >
+                    <span>UPI</span>
+                  </div>
+                  <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+                </div>
+              </label>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (login.loginForm.userID.$error.required) && login.submitted }">
+                            <label class="item item-input item-icon-left item-floating-label text-fill">
+                <input type="text" placeholder="Bank / Virtual Payment Address" data-ng-model="userVO.user" name="userID" required>
+              </label>
+                            <div class="help-block_cont" data-ng-show="login.loginForm.userID.$invalid && login.submitted">
+                                <small class="help-block" data-ng-show="login.loginForm.userID.$error.required && login.submitted">
+                   {{login.famMessages.ERROR.M200002}}
+                  </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (login.loginForm.userID.$error.required) && login.submitted }">
+                            <label class="item item-input item-icon-left item-floating-label text-fill" id="transaction">
+                <input type="text" placeholder="Transaction Reference No" data-ng-model="userVO.user" name="transaction" required>
+              </label>
+                            <div class="help-block_cont" data-ng-show="login.loginForm.userID.$invalid && login.submitted">
+                                <small class="help-block" data-ng-show="login.loginForm.userID.$error.required && login.submitted">
+                   {{login.famMessages.ERROR.M200002}}
+                  </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (login.loginForm.userID.$error.required) && login.submitted }">
+                            <label class="item item-input item-icon-left item-floating-label text-fill" id="amount">
+                <input type="text" placeholder="&#x20b9; Amount" data-ng-model="userVO.user" name="userID" required>
+              </label>
+                            <div class="help-block_cont" data-ng-show="login.loginForm.userID.$invalid && login.submitted">
+                                <small class="help-block" data-ng-show="login.loginForm.userID.$error.required && login.submitted">
+                   {{login.famMessages.ERROR.M200002}}
+                  </small>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;" data-ng-class="{ 'has-error': (login.loginForm.userID.$error.required) && login.submitted }">
+                            <label class="item item-input item-icon-left item-floating-label text-fill" id="date">
+                <input type="date" placeholder="mm/dd/yyyy" data-ng-model="userVO.user" name="date" required>
+              </label>
+                            <div class="help-block_cont" data-ng-show="login.loginForm.userID.$invalid && login.submitted">
+                                <small class="help-block" data-ng-show="login.loginForm.userID.$error.required && login.submitted">
+                   {{login.famMessages.ERROR.M200002}}
+                  </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.sex.$error.required) && (!registration.registrationForm.sex.$pristine) || registration.submitted }">
+                            <label class="item-stacked-label select-box" id="account-department">
+                <div class="lebel-head">Notes for Accounts Department</div>
+                  <textarea placeholder="Text here"></textarea>
+                  <div class="help-block_cont" data-ng-show="registration.registrationForm.sex.$invalid || registration.submitted">
+                    <small class="help-block inline-error" data-ng-show="registration.registrationForm.sex.$error.required && !registration.registrationForm.sex.$pristine || registration.submitted">
+                     {{registration.famMessages.ERROR.M200013}}
+                    </small>
+                </div>
+              </label>
+                        </div>
+                        <button id="submit" style="margin-top: 10px; margin-bottom: 20px;" class="button button-positive submit">Submit</button>
+                    </ion-item>
+                </div>
+                <div class="fund-group">
+                    <ion-item class="item-stable" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> &nbsp; Fund Refund Request
+                    </ion-item>
+                    <ion-item class="item-accordion">
+                        <div class="lebel-head">Initiate Refund Process to get back the balance amount in Service Fund</div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (login.loginForm.userID.$error.required) && login.submitted }">
+                            <label class="item item-input item-icon-left item-floating-label text-fill">
+                <input type="text" placeholder="Bank Account" data-ng-model="userVO.user" name="userID" required>
+              </label>
+                            <div class="help-block_cont" data-ng-show="login.loginForm.userID.$invalid && login.submitted">
+                                <small class="help-block" data-ng-show="login.loginForm.userID.$error.required && login.submitted">
+                   {{login.famMessages.ERROR.M200002}}
+                  </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (login.loginForm.userID.$error.required) && login.submitted }">
+                            <label class="item item-input item-icon-left item-floating-label text-fill" id="bank-name">
+                <input type="text" placeholder="Bank Name" data-ng-model="userVO.user" name="Bank Name" required>
+              </label>
+                            <div class="help-block_cont" data-ng-show="login.loginForm.userID.$invalid && login.submitted">
+                                <small class="help-block" data-ng-show="login.loginForm.userID.$error.required && login.submitted">
+                   {{login.famMessages.ERROR.M200002}}
+                  </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (login.loginForm.userID.$error.required) && login.submitted }">
+                            <label class="item item-input item-icon-left item-floating-label text-fill" id="branch">
+                <input type="text" placeholder="Branch" data-ng-model="userVO.user" name="Branch" required>
+              </label>
+                            <div class="help-block_cont" data-ng-show="login.loginForm.userID.$invalid && login.submitted">
+                                <small class="help-block" data-ng-show="login.loginForm.userID.$error.required && login.submitted">
+                   {{login.famMessages.ERROR.M200002}}
+                  </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (login.loginForm.userID.$error.required) && login.submitted }">
+                            <label class="item item-input item-icon-left item-floating-label text-fill" id="ifsc-code">
+                <input type="text" placeholder="IFSC Code" data-ng-model="userVO.user" name="IFSC Code" required>
+              </label>
+                            <div class="help-block_cont" data-ng-show="login.loginForm.userID.$invalid && login.submitted">
+                                <small class="help-block" data-ng-show="login.loginForm.userID.$error.required && login.submitted">
+                   {{login.famMessages.ERROR.M200002}}
+                  </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (login.loginForm.userID.$error.required) && login.submitted }">
+                            <label class="item item-input item-icon-left item-floating-label text-fill" id="amount">
+                <input type="text" placeholder="&#x20b9; Amount" data-ng-model="userVO.user" name="userID" required>
+              </label>
+                            <div class="help-block_cont" data-ng-show="login.loginForm.userID.$invalid && login.submitted">
+                                <small class="help-block" data-ng-show="login.loginForm.userID.$error.required && login.submitted">
+                   {{login.famMessages.ERROR.M200002}}
+                  </small>
+                            </div>
+                        </div>
+                        <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.sex.$error.required) && (!registration.registrationForm.sex.$pristine) || registration.submitted }">
+                            <label class="item-stacked-label select-box" id="account-department">
+                <div class="lebel-head">Notes for Accounts Department</div>
+                  <textarea placeholder="Text here"></textarea>
+                  <div class="help-block_cont" data-ng-show="registration.registrationForm.sex.$invalid || registration.submitted">
+                    <small class="help-block inline-error" data-ng-show="registration.registrationForm.sex.$error.required && !registration.registrationForm.sex.$pristine || registration.submitted">
+                     {{registration.famMessages.ERROR.M200013}}
+                    </small>
+                </div>
+              </label>
+                        </div>
+                        <button id="submit" style="margin-top: 10px; margin-bottom: 20px;" class="button button-positive submit">Submit</button>
+                    </ion-item>
+                </div>
+                <div class="fund-group">
+                    <ion-item class="item-stable" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> &nbsp; Renew Your Subscription
+                    </ion-item>
+                    <ion-item class="item-accordion">
+                        KGLK
+                    </ion-item>
+                </div>
+                <div class="fund-group">
+                    <ion-item class="item-stable" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> &nbsp; Upgrade Subscription
+                    </ion-item>
+                    <ion-item class="item-accordion">
+                        KGLK
+                    </ion-item>
+                </div>
+                <div class="fund-group">
+                    <ion-item class="item-stable" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> &nbsp; Family Migration
+                    </ion-item>
+                    <ion-item class="item-accordion">
+                        KGLK
+                    </ion-item>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

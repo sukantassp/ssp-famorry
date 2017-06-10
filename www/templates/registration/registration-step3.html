@@ -1,0 +1,172 @@
+<ion-view title="registration-step3" id="registration-statup-page" hide-nav-bar="true">
+  <ion-content padding="true" style="background: url(img/YLljt9sHQZuoOVeWmWEj_login-screen-bg.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+    <div>
+      <img src="img/o2pDWacJRbK5dTh1vP32_login-screen-logo.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+	<form id="registetion-form3" name="registration_step3.registrationFormStep3" class="list login-form" novalidate>
+    <ion-list id="registration-statup3">
+      <p>1. water /telephone /electricity bill/statement of running bank account/Income Tax Assessment Order </p>
+      <p>2. Election Commission ID card, Gas connection Bill, Spouse's</p>
+      <ul class="payment-option">
+        <li>
+          <div class="heading">
+            <h2>1. Online Payment Options</h2>            
+          </div>
+          <div class="heading-content">
+            <p>AMOUNT:4000</p>
+            <label class="item item-radio text-fill" id="radio-netbanking ">
+              <input type="radio" name="radio-payment" value="on">
+              <div class="radio-content">
+                <div class="item-content disable-pointer-events" >
+                  <span>Net Banking</span>
+                </div>
+                <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+              </div>
+            </label>
+            <label class="item item-radio text-fill" id="radio-debitcard">
+              <input type="radio" name="radio-payment">
+              <div class="radio-content">
+                <div class="item-content disable-pointer-events" >
+                  <span>Debit Card</span>
+                </div>
+                <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+              </div>
+            </label>
+            <label class="item item-radio text-fill" id="radio-creditcard">
+              <input type="radio" name="radio-payment">
+              <div class="radio-content">
+                <div class="item-content disable-pointer-events" >
+                  <span>Credit Card</span>
+                </div>
+                <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+              </div>
+            </label>
+            <label class="item item-radio text-fill" id="radio-platinum">
+              <input type="radio" name="radio-payment">
+              <div class="radio-content">
+                <div class="item-content disable-pointer-events" >
+                  <span>Platinum</span>
+                </div>
+                <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+              </div>
+            </label>
+            <button id="pay-online" data-ng-click="registration_step3.payOnlineOptions()" class="button button-positive pay-online">Pay Online</button>
+          </div>
+        </li>
+        <li ng-if="registration_step3.display==1">
+          <div class="heading">
+            <h2>2. "I Have Paid" Request</h2>            
+          </div>
+          <div class="heading-content">
+            <p>I have made a Payment by</p>
+            <label class="item item-radio text-fill" id="radio-check" >
+              <input type="radio" name="radio-paid" value="cheque" data-ng-click="registration_step3.selectMode($event)" >
+              <div class="radio-content">
+                <div class="item-content disable-pointer-events" >
+                  <span >Cheque</span>
+                </div>
+                <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+              </div>
+            </label>
+            <label class="item item-radio text-fill" id="radio-cash"  >
+              <input type="radio" name="radio-paid" data-ng-click="registration_step3.selectMode($event)" value="cash">
+              <div class="radio-content">
+                <div class="item-content disable-pointer-events" >
+                  <span>Cash</span>
+                </div>
+                <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+              </div>
+            </label>
+            <label class="item item-radio text-fill" id="radio-neft" >
+              <input type="radio" name="radio-paid" data-ng-click="registration_step3.selectMode($event)" value="NEFT/RTGS">
+              <div class="radio-content">
+                <div class="item-content disable-pointer-events" >
+                  <span>NEFT/RTGS</span>
+                </div>
+                <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+              </div>
+            </label>
+            <label class="item item-radio text-fill" id="radio-upi" >
+              <input type="radio" name="radio-paid" data-ng-click="registration_step3.selectMode($event)" value="upi">
+              <div class="radio-content">
+                <div class="item-content disable-pointer-events" >
+                  <span>UPI</span>
+                </div>
+                <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+              </div>
+            </label>
+            <div class="list">              
+              <div class="form-group" data-ng-class="{ 'has-error': (registration_step3.registrationFormStep3.requestNumber.$error.required) && ( !registration_step3.registrationFormStep3.requestNumber.$pristine)&& registration_step3.submitted }">
+                <label class="item item-input item-floating-label text-fill" id="claim-number">
+                  <input type="text" placeholder="Claim Request Number" name="requestNumber" data-ng-model="userVO.requestNumber" required>
+                </label>
+                <div class="help-block_cont" data-ng-show="registration_step3.registrationFormStep3.requestNumber.$invalid &&  registration_step3.submitted">
+                    <small class="help-block inline-error" data-ng-show="registration_step3.registrationFormStep3.requestNumber.$error.required && !registration_step3.registrationFormStep3.requestNumber.$pristine || registration_step3.submitted">
+                     {{registration_step3.famMessages.ERROR.M200027}}
+                    </small>
+                </div>
+              </div>
+              <div class="form-group" data-ng-class="{ 'has-error': (registration_step3.registrationFormStep3.bankname.$error.required) && ( !registration_step3.registrationFormStep3.bankname.$pristine) && registration_step3.submitted }">
+                <label class="item item-input item-floating-label text-fill" id="bank-name">
+                  <input type="text" placeholder="Bank Name" name="bankname" data-ng-model="userVO.bankname" required>
+                </label>
+                <div class="help-block_cont" data-ng-show="registration_step3.registrationFormStep3.bankname.$invalid && registration_step3.submitted">
+                    <small class="help-block inline-error" data-ng-show="registration_step3.registrationFormStep3.bankname.$error.required && !registration_step3.registrationFormStep3.bankname.$pristine || registration_step3.submitted">
+                     {{registration_step3.famMessages.ERROR.M200028}}
+                    </small>
+                </div>
+              </div>
+              <div class="form-group" data-ng-class="{ 'has-error': (registration_step3.registrationFormStep3.referenceNo.$error.required) && ( !registration_step3.registrationFormStep3.referenceNo.$pristine) && registration_step3.submitted }">
+                <label class="item item-input item-floating-label text-fill" id="reference-no">
+                  <input type="text" placeholder="Reference No." name="referenceNo" data-ng-model="userVO.referenceNo" required>
+                </label>
+                <div class="help-block_cont" data-ng-show="registration_step3.registrationFormStep3.referenceNo.$invalid && registration_step3.submitted">
+                    <small class="help-block inline-error" data-ng-show="registration_step3.registrationFormStep3.referenceNo.$error.required && !registration_step3.registrationFormStep3.referenceNo.$pristine || registration_step3.submitted">
+                     {{registration_step3.famMessages.ERROR.M200029}}
+                    </small>
+                </div>
+              </div>
+              <div class="form-group" data-ng-class="{ 'has-error': (registration_step3.registrationFormStep3.paidAmount.$error.required) && ( !registration_step3.registrationFormStep3.paidAmount.$pristine) && registration_step3.submitted }">
+                <label class="item item-input item-floating-label text-fill" id="paid-amount">
+                  <input type="text" placeholder="Amount" name="paidAmount" data-ng-model="userVO.paidAmount" required>
+                </label>
+                <div class="help-block_cont" data-ng-show="registration_step3.registrationFormStep3.paidAmount.$invalid &&  registration_step3.submitted">
+                    <small class="help-block inline-error" data-ng-show="registration_step3.registrationFormStep3.paidAmount.$error.required && !registration_step3.registrationFormStep3.paidAmount.$pristine || registration_step3.submitted">
+                     {{registration_step3.famMessages.ERROR.M200030}}
+                    </small>
+                </div>
+              </div>
+              <div class="form-group" data-ng-class="{ 'has-error': (registration_step3.registrationFormStep3.joiningdate.$error.required) && ( !registration_step3.registrationFormStep3.joiningdate.$pristine) && registration_step3.submitted }">
+				<datepicker date-format="dd-MMMM-yyyy" selector="form-control">
+					<div class="input-group">
+						<input name="joiningdate" style="border: 0;  border-bottom: solid 1px #4b6c76; color: #fff; background: transparent; margin-bottom: 5px;" data-ng-model="userVO.joiningdate" class="form-control" placeholder="Choose a date" required/>
+						<span class="input-group-addon" style="cursor: pointer">
+						<i class="fa fa-lg fa-calendar"></i>
+						</span>
+					</div>
+				</datepicker>
+                <div class="help-block_cont" data-ng-show="registration_step3.registrationFormStep3.joiningdate.$invalid &&  registration_step3.submitted">
+                    <small class="help-block inline-error" data-ng-show="registration_step3.registrationFormStep3.joiningdate.$error.required && !registration_step3.registrationFormStep3.joiningdate.$pristine || registration_step3.submitted">
+                     {{registration_step3.famMessages.ERROR.M200031}}
+                    </small>
+                </div>
+              </div>              
+              <div class="form-group">  
+                <label class="item-stacked-label select-box" id="additional-information">
+                  <div class="lebel-head">Additional Information</div>
+                    <textarea placeholder="" data-ng-model="userVO.additionalInfo"></textarea>
+                </label>
+              </div>
+            </div>
+            <button id="submit_payment" class="button button-positive pay-online" data-ng-click="registration_step3.onsubmit(userVO)">Submit</button>
+        </li>
+      </ul>     
+      
+    </ion-list>
+	</form>
+    <div class="button-set">
+      <button id="previous" class="button button-positive previous" ui-sref="registration_step2">Previous</button>
+      <button id="next" class="button button-positive next" ng-disabled="registration_step3.subSuccess!=1" ui-sref="registration_step4">Next</button>
+    </div>
+  </ion-content>
+</ion-view>
